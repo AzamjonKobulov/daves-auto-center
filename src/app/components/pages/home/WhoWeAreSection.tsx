@@ -50,10 +50,7 @@ const WhoWeAreSection = () => {
               className="w-full h-[15.625rem] sm:h-[23.9375rem]"
               src="https://www.youtube.com/embed/r44RKWyfcFw"
               title="Welcome to Silicon Valley"
-              frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
             ></iframe>
           </div>
         </div>

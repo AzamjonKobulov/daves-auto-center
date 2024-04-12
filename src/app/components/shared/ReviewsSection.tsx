@@ -114,7 +114,7 @@ const ReviewsSection = () => {
       <div className="mx-auto space-y-8">
         <h2 className="max-w-base mx-auto px-5">What our clients say</h2>
         <div className="slider relative mx-auto overflow-hidden">
-          <div className="slide-track flex items-stretch gap-5">
+          <div className="slide-track flex items-stretch gap-5 py-2">
             {reviews.map((review, idx) => (
               <Reviews key={idx} review={review} />
             ))}

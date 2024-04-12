@@ -71,6 +71,7 @@ const config: Config = {
         feature: '11px 11px 10px 0 rgba(0, 0, 0, 0.05)',
         review: '0px 4px 6px 0px #0000000F',
         messengerBtn: '4px 3px 9px 0px #0000000D',
+        privacy: '1px 11px 20px 0px #0000000D',
       },
       backgroundImage: {
         faq: "url('/assets/images/bg-workshop.png')",

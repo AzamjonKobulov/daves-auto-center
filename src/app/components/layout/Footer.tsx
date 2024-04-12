@@ -553,7 +553,9 @@ const Footer = () => {
             />
           </Link>
           <div className="flex flex-col-reverse lg:flex-row items-center gap-5 lg:pr-8">
-            <p>© 2023 · Dave&apos;s Auto Center · Sitemap</p>
+            <p>
+              © {new Date().getFullYear()}· Dave&apos;s Auto Center · Sitemap
+            </p>
             <Link href="#" className="whitespace-nowrap">
               Privacy Policy
             </Link>

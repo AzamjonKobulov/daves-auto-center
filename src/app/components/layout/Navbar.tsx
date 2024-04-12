@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Socials from '../shared/Socials';
 import MobileMenu from '../shared/MobileMenu';
 import { useMobileMenu } from '@/app/contexts/MobileMenuContext';
+import MessengerButton from '../shared/MessengerButton';
 
 const Navbar = () => {
   const { isOpen, handleToggleMobMenu } = useMobileMenu();
@@ -13,6 +14,7 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 h-16 sm:h-20 lg:h-100 bg-brand-blue text-white">
       <MobileMenu />
+      <MessengerButton />
       <nav className="max-w-base mx-auto flex items-center justify-between py-4 px-5">
         {/* Logo & Socials */}
         <div className="flex items-center">

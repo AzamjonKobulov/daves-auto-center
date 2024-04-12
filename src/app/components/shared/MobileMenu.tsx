@@ -14,7 +14,7 @@ const MobileMenu = () => {
       }`}
     >
       <div className="w-full relative top-0 space-y-20 pt-5 pb-20">
-        <div className="sticky top-0 z-10 w-full bg-brand-blue-1 pb-2">
+        <div className="sticky top-0 z-10 w-full bg-brand-blue-1 py-2">
           <Link href="/">
             <Image
               src="/assets/images/img-logo-mobile-menu.svg"

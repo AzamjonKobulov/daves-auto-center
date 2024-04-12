@@ -47,6 +47,7 @@ const config: Config = {
       spacing: {
         50: '3.125rem',
         sixty: '3.75rem',
+        70: '4.375rem',
         74: '4.625rem',
         90: '5.625rem',
         100: '6.25rem',
@@ -69,6 +70,7 @@ const config: Config = {
         base: '0px 20px 50px 0px #00000008',
         feature: '11px 11px 10px 0 rgba(0, 0, 0, 0.05)',
         review: '0px 4px 6px 0px #0000000F',
+        messengerBtn: '4px 3px 9px 0px #0000000D',
       },
       backgroundImage: {
         faq: "url('/assets/images/bg-workshop.png')",

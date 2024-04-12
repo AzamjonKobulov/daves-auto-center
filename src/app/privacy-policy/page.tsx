@@ -7,7 +7,7 @@ const page = () => {
         <h1 className="text-2xl sm:text-3xl lg:text-[2.5rem] font-bold text-center">
           Privacy & cookie policy
         </h1>
-        <div className="text-sm lg:text-base space-y-5 lg:space-y-7 mt-9">
+        <div className="text-sm lg:text-base space-y-5 lg:space-y-7 mt-5 lg:mt-9">
           <p>Effective Date: March 28, 2024</p>
           <p>
             Dave&apos;s Auto Center (&quot;we,&quot; &quot;us,&quot; or

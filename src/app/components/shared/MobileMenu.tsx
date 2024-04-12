@@ -3,17 +3,18 @@ import Image from 'next/image';
 import LinksAccordions from './LinksAccordions';
 import React from 'react';
 import { useMobileMenu } from '@/app/contexts/MobileMenuContext';
+import Socials from './Socials';
 
 const MobileMenu = () => {
   const { isOpen, handleToggleMobMenu } = useMobileMenu();
   return (
     <div
-      className={`fixed inset-0 z-50 w-full h-full bg-brand-blue-1 transition-all duration-200 pb-20 ${
+      className={`fixed inset-0 z-50 w-full min-h-screen overflow-auto bg-brand-blue-1 transition-all duration-200 pb-20 ${
         isOpen ? 'translate-x-0' : '-translate-x-full'
       }`}
     >
-      <div className="w-full h-full relative space-y-20 pt-5 pb-20">
-        <div>
+      <div className="w-full relative top-0 space-y-20 pt-5 pb-20">
+        <div className="sticky top-0 z-10 w-full bg-brand-blue-1 pb-2">
           <Link href="/">
             <Image
               src="/assets/images/img-logo-mobile-menu.svg"
@@ -47,6 +48,10 @@ const MobileMenu = () => {
 
         {/* Links */}
         <LinksAccordions />
+      </div>
+
+      <div className="relative z-10 flex items-center justify-center bg-brand-blue-1 py-3">
+        <Socials />
       </div>
     </div>
   );

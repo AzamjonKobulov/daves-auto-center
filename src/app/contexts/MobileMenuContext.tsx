@@ -2,7 +2,6 @@
 
 import { createContext, useContext, useState } from 'react';
 
-// Define the type for the context value
 interface MobileMenuContextValue {
   isOpen: boolean;
   handleToggleMobMenu: () => void;
@@ -12,12 +11,10 @@ interface MobileMenuContextProps {
   children: React.ReactNode;
 }
 
-// Create the context
 const MobileMenuContext = createContext<MobileMenuContextValue | undefined>(
   undefined
 );
 
-// Custom hook for using the context
 export const useMobileMenu = () => {
   const context = useContext(MobileMenuContext);
   if (!context) {
@@ -28,7 +25,6 @@ export const useMobileMenu = () => {
   return context;
 };
 
-// Provider component
 const MobileMenuContextProvider: React.FC<MobileMenuContextProps> = ({
   children,
 }) => {
@@ -39,7 +35,6 @@ const MobileMenuContextProvider: React.FC<MobileMenuContextProps> = ({
     document.body.classList.toggle('overflow-hidden');
   };
 
-  // Value to be provided by the context
   const value: MobileMenuContextValue = {
     isOpen,
     handleToggleMobMenu,

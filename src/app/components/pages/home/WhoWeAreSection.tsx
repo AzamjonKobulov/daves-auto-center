@@ -1,4 +1,3 @@
-import React from 'react';
 import Button from '../../shared/Button';
 
 const WhoWeAreSection = () => {
@@ -48,8 +47,8 @@ const WhoWeAreSection = () => {
           <div className="h-[15.625rem] sm:h-full flex-1 rounded-b-10 sm:rounded-b-none lg:rounded-r-10 overflow-hidden">
             <iframe
               className="w-full h-[15.625rem] sm:h-[23.9375rem]"
-              src="https://www.youtube.com/embed/r44RKWyfcFw"
-              title="Welcome to Silicon Valley"
+              src="https://www.youtube.com/embed/6D_ykLlRcp4"
+              title="A Tour of our shop here in Utah"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"

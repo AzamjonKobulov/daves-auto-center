@@ -3,6 +3,7 @@ import { Poppins } from 'next/font/google';
 import './globals.css';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
+import MobileMenuContextProvider from './contexts/MobileMenuContext';
 
 const poppins = Poppins({
   weight: ['300', '400', '500', '600', '700'],
@@ -19,11 +20,13 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={poppins.className}>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-      </body>
+      <MobileMenuContextProvider>
+        <body className={poppins.className}>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </body>
+      </MobileMenuContextProvider>
     </html>
   );
 }

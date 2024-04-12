@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface review {
   review: string;
   client: string;

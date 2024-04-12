@@ -1,4 +1,3 @@
-import React from 'react';
 import Reviews from './Reviews';
 
 const reviews = [
@@ -112,7 +111,7 @@ const reviews = [
 const ReviewsSection = () => {
   return (
     <section>
-      <div className=" mx-auto space-y-8">
+      <div className="mx-auto space-y-8">
         <h2 className="max-w-base mx-auto px-5">What our clients say</h2>
         <div className="slider relative mx-auto overflow-hidden">
           <div className="slide-track flex items-stretch gap-5">

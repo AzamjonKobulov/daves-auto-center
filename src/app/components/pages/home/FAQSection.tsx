@@ -1,6 +1,4 @@
-import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import FAQAccordions from './FAQAccordions';
 import Button from '../../shared/Button';
 
@@ -51,13 +49,6 @@ const FAQSection = () => {
               </Link>
             </div>
           </div>
-          <Image
-            src="/assets/images/img-overlay-faq.png"
-            width={784}
-            height={512}
-            className="absolute bottom-0 lg:bottom-auto lg:-right-[20%]"
-            alt="Overlay Image"
-          />
         </div>
       </div>
     </section>

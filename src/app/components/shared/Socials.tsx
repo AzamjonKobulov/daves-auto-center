@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface SocialsProps {
   gap?: string;
   bgTiktok?: string;
@@ -16,7 +14,7 @@ const Socials: React.FC<SocialsProps> = ({
         {/* Instagram */}
         <a
           href="#"
-          className="w-10 h-10 shrink-0 grid place-content-center bg-gradient-to-t from-[#EEA054] via-[#D64763] to-[#B62A99] rounded-full"
+          className="w-10 h-10 shrink-0 grid place-content-center bg-gradient-to-t from-[#EEA054] via-[#D64763] to-[#B62A99] rounded-full animate-pulse"
         >
           <svg
             width="17"
@@ -34,7 +32,7 @@ const Socials: React.FC<SocialsProps> = ({
         {/* Facebook */}
         <a
           href="#"
-          className="w-10 h-10 shrink-0 grid place-content-center bg-brand-blue-2 rounded-full"
+          className="w-10 h-10 shrink-0 grid place-content-center bg-brand-blue-2 rounded-full animate-pulse"
         >
           <svg
             width="17"
@@ -52,7 +50,7 @@ const Socials: React.FC<SocialsProps> = ({
         {/* Youtube */}
         <a
           href="#"
-          className="w-10 h-10 shrink-0 grid place-content-center bg-brand-red rounded-full"
+          className="w-10 h-10 shrink-0 grid place-content-center bg-brand-red rounded-full animate-pulse"
         >
           <svg
             width="18"
@@ -70,7 +68,7 @@ const Socials: React.FC<SocialsProps> = ({
         {/* TikTok */}
         <a
           href="#"
-          className={`w-10 h-10 shrink-0 grid place-content-center ${bgTiktok} rounded-full`}
+          className={`w-10 h-10 shrink-0 grid place-content-center ${bgTiktok} rounded-full animate-pulse`}
         >
           <svg
             width="16"

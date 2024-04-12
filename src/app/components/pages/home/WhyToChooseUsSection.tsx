@@ -1,4 +1,3 @@
-import React from 'react';
 import Feature from './Feature';
 import Button from '../../shared/Button';
 

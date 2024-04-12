@@ -1,11 +1,18 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
-import React from 'react';
+
 import Socials from '../shared/Socials';
+import MobileMenu from '../shared/MobileMenu';
+import { useMobileMenu } from '@/app/contexts/MobileMenuContext';
 
 const Navbar = () => {
+  const { isOpen, handleToggleMobMenu } = useMobileMenu();
+
   return (
-    <header className="h-16 sm:h-20 lg:h-100 bg-brand-blue text-white">
+    <header className="sticky top-0 z-50 h-16 sm:h-20 lg:h-100 bg-brand-blue text-white">
+      <MobileMenu />
       <nav className="max-w-base mx-auto flex items-center justify-between py-4 px-5">
         {/* Logo & Socials */}
         <div className="flex items-center">
@@ -33,7 +40,7 @@ const Navbar = () => {
         {/* Cart & My Account */}
         <div className="flex items-center gap-4 sm:gap-5">
           {/* Menu Button */}
-          <button className="hidden lg:block">
+          <button className="hidden lg:block" onClick={handleToggleMobMenu}>
             <svg
               width="40"
               height="40"
@@ -68,7 +75,7 @@ const Navbar = () => {
             </svg>
           </button>
           {/* My Account */}
-          <button className="lg:h-11 lg:bg-white lg:text-black lg:rounded-md lg:px-8">
+          <button className="lg:h-11 lg:bg-white lg:text-black border border-transparent lg:rounded-md hover:bg-transparent hover:text-white hover:border-white transition-all duration-200 lg:px-8">
             <span className="hidden lg:block">My account</span>
             <svg
               width="24"
@@ -87,7 +94,7 @@ const Navbar = () => {
             </svg>
           </button>
           {/* Menu Button */}
-          <button className="lg:hidden">
+          <button className="lg:hidden" onClick={handleToggleMobMenu}>
             <svg
               width="40"
               height="40"

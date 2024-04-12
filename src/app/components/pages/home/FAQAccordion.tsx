@@ -1,10 +1,4 @@
-import React, {
-  Dispatch,
-  SetStateAction,
-  useRef,
-  useState,
-  useEffect,
-} from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 
 interface AccordionData {
   question: string;

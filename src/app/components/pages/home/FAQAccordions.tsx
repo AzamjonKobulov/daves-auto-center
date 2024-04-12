@@ -63,7 +63,7 @@ const FAQAccordions = () => {
   };
 
   return (
-    <div className="space-y-3.5 lg:space-y-2.5">
+    <div className="space-y-2.5">
       {accordionData.map((data, index) => (
         <FAQAccordion
           key={data.question}

@@ -1,7 +1,8 @@
 import className from 'classnames';
+import { ReactNode } from 'react';
 
 type ButtonProps = {
-  children: string;
+  children: string | ReactNode;
   className: string;
   onClick?: () => void;
   redOutline?: boolean;
@@ -10,6 +11,7 @@ type ButtonProps = {
   blue?: boolean;
   roundedBlack?: boolean;
   black?: boolean;
+  blackBordered?: boolean;
 };
 
 const Button: React.FC<ButtonProps> = ({
@@ -20,6 +22,7 @@ const Button: React.FC<ButtonProps> = ({
   red,
   blue,
   roundedBlack,
+  blackBordered,
   black,
   ...rest
 }) => {
@@ -32,6 +35,10 @@ const Button: React.FC<ButtonProps> = ({
       red,
     'uppercase font-medium text-17 bg-brand-blue-1 text-white border border-transparent hover:border-brand-blue-1 rounded-10 hover:bg-white hover:text-brand-blue-1 transition-all duration-200 px-9':
       blue,
+    'bg-brand-dark text-white border border-transparent rounded-full hover:bg-white hover:text-brand-dark hover:border-brand-dark transition-all duration-200 px-9':
+      roundedBlack,
+    'text-brand-dark border border-brand-dark hover:bg-brand-dark hover:text-white transition-all duration-200 px-9':
+      blackBordered,
   });
 
   return (

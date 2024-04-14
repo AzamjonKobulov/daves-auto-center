@@ -12,10 +12,10 @@ const Navbar = () => {
   const { isOpen, handleToggleMobMenu } = useMobileMenu();
 
   return (
-    <header className="sticky top-0 z-50 h-16 sm:h-20 lg:h-100 bg-brand-blue text-white">
+    <header className="sticky top-0 z-50 sm:h-20 lg:h-100 bg-brand-blue text-white">
       <MobileMenu />
       <MessengerButton />
-      <nav className="max-w-base mx-auto flex items-center justify-between py-4 px-5">
+      <nav className="max-w-base mx-auto flex items-center justify-between py-2 lg:py-4 px-5">
         {/* Logo & Socials */}
         <div className="flex items-center">
           {/* Logo */}

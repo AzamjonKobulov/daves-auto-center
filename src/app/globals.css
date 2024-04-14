@@ -46,3 +46,7 @@
     transform: translateX(calc(-250px * 7));
   }
 }
+
+input[type='checkbox']:checked + div svg {
+  @apply block;
+}

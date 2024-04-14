@@ -39,6 +39,8 @@ const Button: React.FC<ButtonProps> = ({
       roundedBlack,
     'text-brand-dark border border-brand-dark hover:bg-brand-dark hover:text-white transition-all duration-200 px-9':
       blackBordered,
+    'font-medium bg-black text-white border border-transparent hover:border-black rounded-10 hover:bg-white hover:text-black transition-all duration-200 px-9':
+      black,
   });
 
   return (

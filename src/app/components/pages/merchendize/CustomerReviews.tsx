@@ -165,7 +165,7 @@ const CustomerReviews = () => {
             <p className="text-sm text-brand-gray/50">1/26/2024</p>
           </div>
         </div>
-        <p className="text-sm text-brand-dark pl-sixty lg:pl-[5.625rem]">
+        <p className="text-sm text-brand-dark pl-sixty lg:pl-90">
           This hoodie was fantastic! Fit perfect. Awesome design. Soft material.
           Fast Shipping.
         </p>

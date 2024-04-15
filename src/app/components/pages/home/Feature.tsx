@@ -14,7 +14,7 @@ const Feature: React.FC<FeatureProps> = ({ item }) => {
         width={90}
         height={90}
         alt={item.label}
-        className="w-16 h-16 lg:w-[5.625rem] lg:h-[5.625rem] mx-auto"
+        className="w-16 h-16 lg:w-90 lg:h-90 mx-auto"
       />
       <div className="space-y-1 sm:space-y-2.5">
         <h3 className="capitalize">{item.label}</h3>

@@ -3,7 +3,7 @@ import Button from '../components/shared/Button';
 
 const page = () => {
   return (
-    <div>
+    <>
       <section className="pb-32 lg:pb-56">
         <div className="max-w-base mx-auto px-5">
           <div className="space-y-5">
@@ -406,7 +406,7 @@ const page = () => {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 

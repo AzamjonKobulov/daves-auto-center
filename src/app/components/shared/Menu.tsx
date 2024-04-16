@@ -216,7 +216,7 @@ const Menu = () => {
             </ul>
           </div>
         </div>
-        <div className="space-y-5">
+        <div className="space-y-5 xl:-mr-20">
           <p className="text-lg smg:text-xl lg:text-3xl font-bold">Services</p>
           <ul className="space-y-3.5 text-sm lg:text-base text-white/50">
             <li>
@@ -344,13 +344,29 @@ const Menu = () => {
         </div>
         <div className="block space-y-5">
           <p className="text-lg smg:text-xl lg:text-3xl font-bold">Blog</p>
-          <ul className="hidden space-y-3.5 text-sm lg:text-base text-white/50">
+          <ul className="space-y-3.5 text-sm lg:text-base text-white/50">
             <li>
               <Link
                 href="#"
                 className="hover:text-white transition-all duration-200"
               >
-                Sprinter Van Repair
+                Lorem
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="#"
+                className="hover:text-white transition-all duration-200"
+              >
+                Ipsum
+              </Link>
+            </li>{' '}
+            <li>
+              <Link
+                href="#"
+                className="hover:text-white transition-all duration-200"
+              >
+                Dolor sit amet
               </Link>
             </li>
           </ul>

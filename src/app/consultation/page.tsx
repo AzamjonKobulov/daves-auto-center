@@ -19,6 +19,7 @@ const Page = () => {
   };
   const handleToggleDaveOpen = () => {
     setIsDaveOpen((open) => !open);
+    console.log('click');
   };
   const handleToggleCallWithOpen = () => {
     setIsCallWithOpen((open) => !open);

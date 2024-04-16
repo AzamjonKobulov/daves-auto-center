@@ -45,7 +45,7 @@ const LinksAccordion: React.FC<LinksAccordionProps> = ({
         className="h-50 lg:h-sixty w-full flex items-center justify-between gap-5 px-5 py-4 sm:py-5"
         onClick={() => onOpen(index)}
       >
-        <p className="max-w-80 sm:max-w-none text-left mg:text-lg">
+        <p className="max-w-80 sm:max-w-none text-left mg:text-lg text-white">
           {data.theme}
         </p>
 

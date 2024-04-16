@@ -1,5 +1,8 @@
 'use client';
 
+import { useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
+
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -7,12 +10,20 @@ import Socials from '../shared/Socials';
 import MobileMenu from '../shared/MobileMenu';
 import { useMobileMenu } from '@/app/contexts/MobileMenuContext';
 import MessengerButton from '../shared/MessengerButton';
+import Menu from '../shared/Menu';
 
 const Navbar = () => {
-  const { isOpen, handleToggleMobMenu } = useMobileMenu();
+  const { handleToggleMobMenu } = useMobileMenu();
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+
+  const handleToggleMenu = () => {
+    setIsMenuOpen((open) => !open);
+    document.body.classList.toggle('overflow-hidden');
+  };
 
   return (
     <header className="sticky top-0 z-50 sm:h-20 lg:h-100 bg-brand-blue text-white">
+      <AnimatePresence>{isMenuOpen && <Menu />}</AnimatePresence>
       <MobileMenu />
       <MessengerButton />
       <nav className="max-w-base mx-auto flex items-center justify-between py-2 lg:py-4 px-5">
@@ -42,23 +53,41 @@ const Navbar = () => {
         {/* Cart & My Account */}
         <div className="flex items-center gap-4 sm:gap-5">
           {/* Menu Button */}
-          <button className="hidden lg:block" onClick={handleToggleMobMenu}>
-            <svg
-              width="40"
-              height="40"
-              viewBox="0 0 40 40"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-8 h-8 sm:w-auto sm:h-auto"
-            >
-              <path
-                d="M6.66669 12H33.3334M6.66669 20H33.3334M6.66669 28H33.3334"
-                stroke="white"
-                stroke-width="2"
-                stroke-miterlimit="10"
-                stroke-linecap="round"
-              />
-            </svg>
+          <button className="hidden lg:block" onClick={handleToggleMenu}>
+            {isMenuOpen ? (
+              <svg
+                width="29"
+                height="18"
+                viewBox="0 0 29 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1.66675 1L28 17M1.66675 17L28 1"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                />
+              </svg>
+            ) : (
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 40 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-8 h-8 sm:w-auto sm:h-auto"
+              >
+                <path
+                  d="M6.66669 12H33.3334M6.66669 20H33.3334M6.66669 28H33.3334"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                />
+              </svg>
+            )}
           </button>
           {/* Cart */}
           <button>

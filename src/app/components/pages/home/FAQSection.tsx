@@ -5,7 +5,7 @@ import Button from '../../shared/Button';
 const FAQSection = () => {
   return (
     <section>
-      <div className="bg-faq bg-no-repeat bg-cover pt-8 pb-20 lg:pt-20">
+      <div className="bg-faq bg-no-repeat bg-cover bg-center pt-8 pb-20 lg:pt-20">
         <div className="max-w-base mx-auto relative flex flex-col md:flex-row gap-8 lg:gap-16 overflow-hidden px-5">
           <div className="flex-1 space-y-5 lg:space-y-8 relative z-10">
             <h2 className="text-white">Frequently asked questions</h2>

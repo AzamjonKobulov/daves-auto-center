@@ -9,7 +9,7 @@ const MobileMenu = () => {
   const { isOpen, handleToggleMobMenu } = useMobileMenu();
   return (
     <div
-      className={`fixed inset-0 z-50 w-full min-h-screen overflow-auto bg-brand-blue-1 transition-all duration-200 pb-20 ${
+      className={`lg:hidden fixed inset-0 z-[80] w-full min-h-screen overflow-auto bg-brand-blue-1 transition-all duration-200 pb-20 ${
         isOpen ? 'translate-x-0' : '-translate-x-full'
       }`}
     >
@@ -25,7 +25,7 @@ const MobileMenu = () => {
             />
           </Link>
           <button
-            className="absolute top-4 right-5"
+            className="absolute -top-1 sm:top-0 right-5"
             onClick={handleToggleMobMenu}
           >
             <svg

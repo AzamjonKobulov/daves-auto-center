@@ -1,7 +1,29 @@
+'use client';
+
+import { useState } from 'react';
+
 import Image from 'next/image';
 import Button from '../components/shared/Button';
+import WhoIsTyson from '../components/pages/consultation/WhoIsTyson';
+import WhoIsDave from '../components/pages/consultation/WhoIsDave';
+import CallWith from '../components/pages/consultation/CallWith';
+import { AnimatePresence } from 'framer-motion';
 
-const page = () => {
+const Page = () => {
+  const [isTysonOpen, setIsTysonOpen] = useState<boolean>(false);
+  const [isDaveOpen, setIsDaveOpen] = useState<boolean>(false);
+  const [isCallWithOpen, setIsCallWithOpen] = useState<boolean>(false);
+
+  const handleToggleTysonOpen = () => {
+    setIsTysonOpen((open) => !open);
+  };
+  const handleToggleDaveOpen = () => {
+    setIsDaveOpen((open) => !open);
+  };
+  const handleToggleCallWithOpen = () => {
+    setIsCallWithOpen((open) => !open);
+  };
+
   return (
     <>
       <section className="pb-32 lg:pb-56">
@@ -227,9 +249,12 @@ const page = () => {
                   <div className="h-90 flex items-end border-b border-brand-gray/50 pb-3">
                     <h5 className="text-lg font-bold uppercase">
                       Consultation with mechanic{' '}
-                      <a href="#" className="underline">
+                      <button
+                        className="underline uppercase"
+                        onClick={handleToggleTysonOpen}
+                      >
                         Tyson
-                      </a>
+                      </button>
                     </h5>
                   </div>
                   <div className="space-y-8 pt-4">
@@ -310,9 +335,12 @@ const page = () => {
                 <div className="xs:border border-brand-red-1 rounded-10 lg:rounded-20 px-7 xs:px-4 pb-6">
                   <div className="h-90 flex items-center border-b border-brand-gray/50">
                     <h5 className="text-lg font-bold uppercase">
-                      <a href="#" className="underline">
+                      <button
+                        className="underline uppercase"
+                        onClick={handleToggleDaveOpen}
+                      >
                         Dave
-                      </a>
+                      </button>
                     </h5>
                   </div>
                   <div className="space-y-8 pt-4">
@@ -405,9 +433,30 @@ const page = () => {
             </div>
           </div>
         </div>
+        <AnimatePresence>
+          {isTysonOpen && (
+            <WhoIsTyson
+              onToggleTyson={handleToggleTysonOpen}
+              onToggleCallWith={handleToggleCallWithOpen}
+            />
+          )}
+        </AnimatePresence>
+        <AnimatePresence>
+          {isDaveOpen && (
+            <WhoIsDave
+              onToggleDave={handleToggleDaveOpen}
+              onToggleCallWith={handleToggleCallWithOpen}
+            />
+          )}
+        </AnimatePresence>
+        <AnimatePresence>
+          {isCallWithOpen && (
+            <CallWith onToggleCallWith={handleToggleCallWithOpen} />
+          )}
+        </AnimatePresence>
       </section>
     </>
   );
 };
 
-export default page;
+export default Page;

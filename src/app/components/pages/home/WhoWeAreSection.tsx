@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Button from '../../shared/Button';
 
 const WhoWeAreSection = () => {
@@ -37,9 +38,11 @@ const WhoWeAreSection = () => {
                 <p className="font-bold text-xl whitespace-nowrap sm:text-2xl">
                   Dave’s Auto is Monster engines
                 </p>
-                <Button redOutline className="w-full h-50 sm:h-sixty">
-                  Check out our engines here
-                </Button>
+                <Link href="https://monsterengines.com/">
+                  <Button redOutline className="w-full h-50 sm:h-sixty mt-2">
+                    Check out our engines here
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

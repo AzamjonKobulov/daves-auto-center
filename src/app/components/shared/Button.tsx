@@ -4,7 +4,7 @@ import { ReactNode } from 'react';
 type ButtonProps = {
   children: string | ReactNode;
   className: string;
-  onClick?: () => void;
+  onClick?: (e: any) => void;
   redOutline?: boolean;
   blueOutline?: boolean;
   red?: boolean;

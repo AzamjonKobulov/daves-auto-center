@@ -1,5 +1,6 @@
+import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
+
 import Button from '../../shared/Button';
 
 interface CallWithProps {
@@ -7,6 +8,13 @@ interface CallWithProps {
 }
 
 const CallWith: React.FC<CallWithProps> = ({ onToggleCallWith }) => {
+  const router = useRouter();
+
+  const handleRoute = (e: any) => {
+    e.preventDefault();
+    router.push('order-service');
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -42,7 +50,7 @@ const CallWith: React.FC<CallWithProps> = ({ onToggleCallWith }) => {
           <div className="">
             <form
               action="#"
-              className="min-h-max w-full grid md:grid-cols-2 gap-5 text-brand-dark"
+              className="min-h-max w-full grid sm:grid-cols-2 gap-5 text-brand-dark"
             >
               <label htmlFor="Need" className="space-y-5">
                 <span className="text-17"> Vehicle</span>
@@ -175,7 +183,7 @@ const CallWith: React.FC<CallWithProps> = ({ onToggleCallWith }) => {
                   className="h-20 w-full border border-brand-gray/50 resize-none rounded outline-brand-blue/70 text-15 placeholder:text-brand-dark/50 p-4"
                   placeholder="Write here"
                 ></textarea>
-              </label>{' '}
+              </label>
               <label
                 htmlFor="information"
                 className="flex flex-col justify-between space-y-2"
@@ -190,11 +198,9 @@ const CallWith: React.FC<CallWithProps> = ({ onToggleCallWith }) => {
               <Button
                 blue
                 className="h-sixty sm:h-16 col-span-2 mt-auto mb-20 lg:mb-0"
-                onClick={() => {
-                  onToggleCallWith();
-                }}
+                onClick={handleRoute}
               >
-                Continue
+                Order a zoom call
               </Button>
             </form>
           </div>

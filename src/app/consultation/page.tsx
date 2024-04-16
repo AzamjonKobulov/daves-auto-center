@@ -249,7 +249,7 @@ const Page = () => {
                 <div className="xs:border border-brand-gray/50 rounded-10 lg:rounded-20 px-7 xs:px-4 pb-6">
                   <div className="h-90 flex items-end border-b border-brand-gray/50 pb-3">
                     <h5 className="text-lg font-bold uppercase">
-                      Consultation with mechanic{' '}
+                      Consultation with mechanic
                       <button
                         className="underline uppercase"
                         onClick={handleToggleTysonOpen}
@@ -300,6 +300,7 @@ const Page = () => {
                       <Button
                         redOutline
                         className="w-full h-10 text-15 rounded-md"
+                        onClick={handleToggleCallWithOpen}
                       >
                         order
                       </Button>
@@ -386,6 +387,7 @@ const Page = () => {
                       <Button
                         redOutline
                         className="w-full h-10 text-15 rounded-md"
+                        onClick={handleToggleCallWithOpen}
                       >
                         order
                       </Button>
@@ -407,11 +409,11 @@ const Page = () => {
                               />
                             </svg>
 
-                            <p className="text-15 font-semibold tracking-[-6%]">
+                            <p className="xl:text-sm font-semibold tracking-[-6%]">
                               Visiting your shop
                             </p>
                           </div>
-                          <p className="text-15 font-semibold tracking-[-6%]">
+                          <p className="xl:text-sm font-semibold tracking-[-6%]">
                             individual
                           </p>
                         </div>
@@ -441,16 +443,12 @@ const Page = () => {
               onToggleCallWith={handleToggleCallWithOpen}
             />
           )}
-        </AnimatePresence>
-        <AnimatePresence>
           {isDaveOpen && (
             <WhoIsDave
               onToggleDave={handleToggleDaveOpen}
               onToggleCallWith={handleToggleCallWithOpen}
             />
           )}
-        </AnimatePresence>
-        <AnimatePresence>
           {isCallWithOpen && (
             <CallWith onToggleCallWith={handleToggleCallWithOpen} />
           )}

@@ -5,7 +5,7 @@ const Blocks = () => {
     <div className="max-w-base mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-10 lg:mt-14 px-5">
       {/* Repair questions + consultation */}
       <Link
-        href="/"
+        href="/consultation"
         className="sm:col-span-2 relative flex flex-col justify-between group bg-white shadow-feature rounded-2xl sm:rounded-20 overflow-hidden"
       >
         {/* Qustions Image */}
@@ -57,7 +57,7 @@ const Blocks = () => {
       </Link>
       {/* Special offers */}
       <Link
-        href="/"
+        href="/special-offers"
         className="flex flex-col justify-between group bg-white shadow-feature rounded-2xl sm:rounded-20 overflow-hidden"
       >
         {/* Texts */}
@@ -175,7 +175,7 @@ const Blocks = () => {
       </Link>
       {/* Merchandize */}
       <Link
-        href="/"
+        href="/merchendize/apparel"
         className="flex flex-col justify-between group bg-white shadow-feature rounded-2xl sm:rounded-20 overflow-hidden"
       >
         {/* Texts */}

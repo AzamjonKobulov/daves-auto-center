@@ -107,3 +107,19 @@ input[type='checkbox']:checked + div svg {
 .react-calendar__month-view__days__day--weekend {
   @apply text-black/50;
 }
+
+.custom-scrollbar::-webkit-scrollbar {
+  @apply w-2; /* Width of the scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-brand-gray/30;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-brand-gray/60 rounded-full hover:bg-brand-gray;
+}
+
+.swiper-wrapper {
+  @apply !pb-3;
+}

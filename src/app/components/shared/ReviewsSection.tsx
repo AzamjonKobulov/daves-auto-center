@@ -1,3 +1,14 @@
+'use client';
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+
+// import required modules
+import { Autoplay } from 'swiper/modules';
+
 import Reviews from './Reviews';
 
 const reviews = [
@@ -113,12 +124,42 @@ const ReviewsSection = () => {
     <section>
       <div className="mx-auto space-y-8">
         <h2 className="max-w-base mx-auto px-5">What our clients say</h2>
-        <div className="slider relative mx-auto overflow-hidden">
-          <div className="slide-track flex items-stretch gap-5 py-2">
+        <div className="max-w-base mx-auto lg:px-5">
+          <Swiper
+            spaceBetween={16}
+            centeredSlides={true}
+            loop={true}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            pagination={{
+              clickable: true,
+            }}
+            navigation={true}
+            modules={[Autoplay]}
+            breakpoints={{
+              0: {
+                slidesPerView: 1.5,
+                spaceBetween: 16,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+              },
+            }}
+            className="mySwiper"
+          >
             {reviews.map((review, idx) => (
-              <Reviews key={idx} review={review} />
+              <SwiperSlide key={idx} className="xs:px-0.5 lg:px-0">
+                <Reviews review={review} />
+              </SwiperSlide>
             ))}
-          </div>
+          </Swiper>
         </div>
       </div>
     </section>

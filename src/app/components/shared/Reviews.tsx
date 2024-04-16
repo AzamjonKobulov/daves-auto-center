@@ -9,7 +9,7 @@ interface ReviewProps {
 
 const Reviews: React.FC<ReviewProps> = ({ review }) => {
   return (
-    <div className="slide w-64 sm:max-w-96 sm:w-full flex flex-col justify-between gap-5 relative bg-white text-xs xs:text-15 sm:text-17 shadow-review rounded-10 p-4 sm:pb-5 sm:px-8 sm:py-8">
+    <div className="h-56 xs:h-64 sm:h-72 lg:h-80 flex flex-col justify-between gap-5 relative bg-white text-xs xs:text-15 sm:text-17 shadow-review rounded-10 p-4 sm:pb-5 sm:px-8 sm:py-8">
       <svg
         width="24"
         height="20"

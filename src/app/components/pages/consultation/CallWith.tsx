@@ -21,9 +21,9 @@ const CallWith: React.FC<CallWithProps> = ({ onToggleCallWith }) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
-      className="sm:fixed inset-0 flex items-center justify-center z-[60] sm:bg-black/50 sm:px-5 sm:py-5"
+      className="sm:fixed inset-0 flex items-center justify-center z-[60] sm:bg-black/50 sm:px-5 sm:py-5 overflow-hidden"
     >
-      <div className="lg:max-w-4xl xl:max-w-5xl w-full max-h-full oveflow-auto fixed sm:relative inset-0 z-[60] mx-auto  bg-white sm:rounded-10 lg:rounded-20 shadow-privacy overflow-auto pt-14 sm:pt-16 px-5 pb-5 lg:p-10 xl:p-50">
+      <div className="custom-scrollbar lg:max-w-4xl xl:max-w-5xl w-full max-h-full fixed sm:relative inset-0 z-[60] mx-auto  bg-white sm:rounded-10 lg:rounded-20 shadow-privacy overflow-auto pt-14 sm:pt-16 px-5 pb-5 lg:p-10 xl:p-50">
         <button
           className="absolute top-5 right-5 lg:top-8 lg:right-8"
           onClick={onToggleCallWith}
@@ -43,14 +43,14 @@ const CallWith: React.FC<CallWithProps> = ({ onToggleCallWith }) => {
             />
           </svg>
         </button>
-        <div className="space-y-5">
+        <div className="space-y-5 pb-20 lg:pb-0">
           <h2 className="text-2xl lg:text-[2rem] text-center font-bold text-brand-dark">
             Please fill out the from
           </h2>
           <div className="">
             <form
               action="#"
-              className="min-h-max w-full grid sm:grid-cols-2 gap-5 text-brand-dark"
+              className="min-h-max w-full space-y-5 sm:space-y-0 sm:grid grid-cols-2 sm:gap-5 text-brand-dark"
             >
               <label htmlFor="Need" className="space-y-5">
                 <span className="text-17"> Vehicle</span>
@@ -69,7 +69,7 @@ const CallWith: React.FC<CallWithProps> = ({ onToggleCallWith }) => {
                   placeholder="Model"
                 />
               </label>
-              <div className="grid grid-cols-2 gap-5">
+              <div className="grid grid-cols-2 gap-5 pb-5 sm:pb-0">
                 <label htmlFor="Year" className="">
                   <input
                     type="text"
@@ -197,7 +197,7 @@ const CallWith: React.FC<CallWithProps> = ({ onToggleCallWith }) => {
               </label>
               <Button
                 blue
-                className="h-sixty sm:h-16 col-span-2 mt-auto mb-20 lg:mb-0"
+                className="h-sixty sm:h-16 w-full sm:col-span-2 mt-auto mb-20 lg:mb-0"
                 onClick={handleRoute}
               >
                 Order a zoom call

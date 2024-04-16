@@ -23,7 +23,7 @@ const OfferBox: React.FC<OfferBoxProps> = ({ offer, index }) => {
             alt="Special Offer"
             width={1000}
             height={500}
-            className="w-full h-full object-cover"
+            className={index !== 0 ? 'w-4/5' : ''}
           />
         </div>
         <div className="space-y-2 mt-2.5">

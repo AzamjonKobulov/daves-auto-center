@@ -251,7 +251,7 @@ const Page = () => {
                     <h5 className="text-lg font-bold uppercase">
                       Consultation with mechanic
                       <button
-                        className="underline uppercase"
+                        className="underline uppercase ml-1"
                         onClick={handleToggleTysonOpen}
                       >
                         Tyson

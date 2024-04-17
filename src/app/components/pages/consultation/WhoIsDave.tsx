@@ -20,7 +20,7 @@ const WhoIsTyson: React.FC<WhoIsDaveProps> = ({
       className="sm:fixed inset-0  sm:grid place-content-center z-[60] sm:bg-black/50 sm:px-5"
     >
       <div className="custom-scrollbar sm:w-4/5 lg:w-auto xl:w-auto fixed inset-0 z-[70] mx-auto lg:mx-0 lg:max-w-4xl xl:max-w-5xl w-full sm:relative bg-white sm:rounded-10 lg:rounded-20 shadow-privacy overflow-auto sm:my-5 pt-14 sm:pt-16 px-5 pb-5 lg:p-10 xl:p-sixty">
-        <div className="min-h-max lg:h-full grid lg:grid-cols-2 gap-8 xl:gap-16">
+        <div className="grid lg:grid-cols-2 gap-8 xl:gap-16">
           <button
             className="absolute top-5 right-5 lg:top-8 lg:right-8"
             onClick={onToggleDave}

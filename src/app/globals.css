@@ -139,3 +139,24 @@ input[type='checkbox']:checked + div svg {
     transform: scale(0.8);
   }
 }
+
+/* Styling the scrollbar */
+::-webkit-scrollbar {
+  width: 4px; /* width of the scrollbar */
+}
+
+/* Styling the track */
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* color of the track */
+}
+
+/* Styling the handle or thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* color of the thumb */
+  border-radius: 6px; /* roundness of the thumb */
+}
+
+/* Styling the corners of the scrollbar */
+::-webkit-scrollbar-corner {
+  background-color: #f1f1f1; /* color of the corner */
+}

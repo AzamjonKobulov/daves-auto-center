@@ -17,10 +17,10 @@ const WhoIsTyson: React.FC<WhoIsTysonProps> = ({
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
-      className="sm:fixed inset-0 sm:grid place-content-center z-[60] sm:bg-black/50 sm:px-5"
+      className="sm:fixed inset-0 sm:grid place-content-center z-[60] sm:bg-black/50 sm:px-5 py-5"
     >
-      <div className="sm:w-4/5 lg:w-auto xl:w-auto fixed inset-0 z-[60] mx-auto lg:mx-0 lg:max-w-4xl xl:max-w-5xl xl:h-[51.6875rem] w-full sm:relative bg-white sm:rounded-10 lg:rounded-20 shadow-privacy overflow-auto sm:my-5 pt-14 sm:pt-16 px-5 pb-5 lg:p-10 xl:p-sixty">
-        <div className="min-h-max grid lg:grid-cols-2 gap-8 xl:gap-16">
+      <div className="sm:w-4/5 lg:w-auto xl:w-auto fixed inset-0 z-[60] mx-auto lg:mx-0 lg:max-w-4xl xl:max-w-5xl  w-full sm:relative bg-white sm:rounded-10 lg:rounded-20 shadow-privacy overflow-auto sm:my-5 pt-14 sm:pt-16 px-5 pb-5 lg:p-10 xl:p-sixty">
+        <div className="h-max grid lg:grid-cols-2 gap-8 xl:gap-16">
           <button
             className="absolute top-5 right-5 lg:top-8 lg:right-8"
             onClick={onToggleTyson}
@@ -49,7 +49,7 @@ const WhoIsTyson: React.FC<WhoIsTysonProps> = ({
               className="w-full h-full object-cover object-top lg:object-[73%] "
             />
           </div>
-          <div className="h-max overflow-auto sm:h-auto flex flex-col justify-between lg:gap-10">
+          <div className="flex flex-col justify-between lg:gap-10">
             <div className="space-y-8 text-brand-dark text-15 sm:text-17">
               <h2 className="text-2xl sm:text-4xl lg:text-[3.125rem] font-bold">
                 Tyson

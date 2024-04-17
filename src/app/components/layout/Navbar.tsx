@@ -11,13 +11,21 @@ import MobileMenu from '../shared/MobileMenu';
 import { useMobileMenu } from '@/app/contexts/MobileMenuContext';
 import MessengerButton from '../shared/MessengerButton';
 import Menu from '../shared/Menu';
+import MessagePoppup from '../shared/MessagePoppup';
 
 const Navbar = () => {
   const { handleToggleMobMenu } = useMobileMenu();
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [isMessagePoppupOpen, setIsMessagePoppupOpen] =
+    useState<boolean>(false);
 
   const handleToggleMenu = () => {
     setIsMenuOpen((open) => !open);
+    document.body.classList.toggle('overflow-hidden');
+  };
+
+  const handleToggleMessagePoppup = () => {
+    setIsMessagePoppupOpen((open) => !open);
     document.body.classList.toggle('overflow-hidden');
   };
 
@@ -25,7 +33,12 @@ const Navbar = () => {
     <header className="sticky top-0 z-50 sm:h-20 lg:h-100 bg-brand-blue text-white">
       <AnimatePresence>{isMenuOpen && <Menu />}</AnimatePresence>
       <MobileMenu />
-      <MessengerButton />
+      <MessengerButton onToggleMessage={handleToggleMessagePoppup} />
+      <AnimatePresence>
+        {isMessagePoppupOpen && (
+          <MessagePoppup onToggleMessage={handleToggleMessagePoppup} />
+        )}
+      </AnimatePresence>
       <nav className="max-w-base mx-auto flex items-center justify-between py-2 lg:py-4 px-5">
         {/* Logo & Socials */}
         <div className="flex items-center">

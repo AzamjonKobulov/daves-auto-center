@@ -49,10 +49,10 @@ const Blocks = () => {
         </div>
         <Image
           src="/assets/images/img-man.png"
-          alt="Repair questions + consultation  "
+          alt="Repair questions + consultation"
           width={329}
           height={240}
-          className="h-[8.8125rem] w-40 sm:w-1/3 sm:h-60 md:h-80 md:w-auto  relative z-10 sm:-mt-10 lg:-mt-16 ml-auto group-hover:scale-110 transition-all duration-200"
+          className="h-48 w-44 sm:w-1/3 sm:h-60 md:h-80 md:w-auto  relative z-10 sm:-mt-10 lg:-mt-16 ml-auto group-hover:scale-110 transition-all duration-200"
         />
       </Link>
       {/* Special offers */}

@@ -41,9 +41,9 @@ const MessagePoppup: React.FC<MessagePoppupProps> = ({ onToggleMessage }) => {
         <AnimatePresence>
           {isSuccess ? (
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 20 }}
+              exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.2 }}
               className="space-y-3 text-center"
             >

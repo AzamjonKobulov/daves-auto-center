@@ -25,7 +25,7 @@ const MobileMenu = () => {
             />
           </Link>
           <button
-            className="absolute -top-1 sm:top-0 right-5"
+            className="absolute -top-5 sm:top-0 right-5"
             onClick={handleToggleMobMenu}
           >
             <svg

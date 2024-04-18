@@ -136,7 +136,6 @@ const ReviewsSection = () => {
             pagination={{
               clickable: true,
             }}
-            navigation={true}
             modules={[Autoplay]}
             breakpoints={{
               0: {

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import BottomLogoCarousel from './BottomLogoCarousel';
+import BottomLogoCarousel from '../../shared/BottomLogoCarousel';
 
 const posts = [
   { img: '/assets/images/img-video-1.png' },

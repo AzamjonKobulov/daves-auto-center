@@ -19,6 +19,8 @@ const config: Config = {
         lg: '64rem',
         xl: '80rem',
         '2xl': '90rem',
+        '3xl': '107.5rem',
+        '4xl': '120rem',
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
@@ -43,6 +45,7 @@ const config: Config = {
           gray: {
             DEFAULT: '#898989',
             100: '#F9F9F9',
+            200: '#d9d9d9',
           },
         },
       },
@@ -77,6 +80,7 @@ const config: Config = {
       },
       backgroundImage: {
         faq: "url('/assets/images/bg-workshop.png')",
+        blog: "url('/assets/images/bg-hero-blog.png')",
       },
     },
   },

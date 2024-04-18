@@ -160,3 +160,23 @@ input[type='checkbox']:checked + div svg {
 ::-webkit-scrollbar-corner {
   background-color: #f1f1f1; /* color of the corner */
 }
+
+.slider-section-blog .swiper {
+  @apply !overflow-visible;
+}
+
+.swiper-pagination {
+  @apply !z-20;
+}
+
+.swiper-pagination-bullets {
+  @apply !gap-3.5 !-bottom-[10%];
+}
+
+.swiper-pagination-bullet {
+  @apply !w-3 !h-3 lg:!w-4 lg:!h-4 !bg-brand-gray-200;
+}
+
+.swiper-pagination-bullet-active {
+  @apply lg:!w-4 lg:!h-4 !bg-brand-blue-1;
+}

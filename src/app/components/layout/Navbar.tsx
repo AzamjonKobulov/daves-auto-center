@@ -125,7 +125,12 @@ const Navbar = () => {
             </svg>
           </button>
           {/* My Account */}
-          {pathname === '/account' && window.screenX < 1024 ? (
+          {pathname === '/account' ||
+          pathname === '/account/orders' ||
+          pathname === '/account/appointments' ||
+          pathname === '/account/policy' ||
+          pathname === '/account/favorites' ||
+          pathname === '/account/addresses' ? (
             <button onClick={handleToggleNavMobile}>
               <svg
                 width="24"

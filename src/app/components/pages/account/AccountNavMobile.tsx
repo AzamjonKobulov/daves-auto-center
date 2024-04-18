@@ -5,8 +5,13 @@ import Image from 'next/image';
 import { useAccount } from '@/app/contexts/AccountContext';
 
 const AccountNavMobile = () => {
-  const { handleUploadImageClick, image, handleUploadImage, inputRef } =
-    useAccount();
+  const {
+    handleUploadImageClick,
+    image,
+    handleUploadImage,
+    inputRef,
+    handleToggleNavMobile,
+  } = useAccount();
 
   return (
     <motion.div
@@ -79,6 +84,7 @@ const AccountNavMobile = () => {
           <Link
             href="/account"
             className="flex items-center gap-5 text-17 group hover:text-brand-red-1 transition-all duration-200"
+            onClick={handleToggleNavMobile}
           >
             <svg
               width="31"
@@ -97,6 +103,7 @@ const AccountNavMobile = () => {
           <Link
             href="/account/orders"
             className="flex items-center gap-5 text-17 group hover:text-brand-red-1 transition-all duration-200"
+            onClick={handleToggleNavMobile}
           >
             <svg
               width="31"
@@ -124,6 +131,7 @@ const AccountNavMobile = () => {
           <Link
             href="/account/appointments"
             className="flex items-center gap-5 text-17 group hover:text-brand-red-1 transition-all duration-200"
+            onClick={handleToggleNavMobile}
           >
             <svg
               width="31"
@@ -151,6 +159,7 @@ const AccountNavMobile = () => {
           <Link
             href="/account/favorites"
             className="flex items-center gap-5 text-17 group hover:text-brand-red-1 transition-all duration-200"
+            onClick={handleToggleNavMobile}
           >
             <svg
               width="31"
@@ -169,6 +178,7 @@ const AccountNavMobile = () => {
           <Link
             href="/account/addresses"
             className="flex items-center gap-5 text-17 group hover:text-brand-red-1 transition-all duration-200"
+            onClick={handleToggleNavMobile}
           >
             <svg
               width="31"
@@ -185,8 +195,9 @@ const AccountNavMobile = () => {
         </li>
         <li>
           <Link
-            href="/"
+            href="/account/policy"
             className="flex items-center gap-5 text-17 group hover:text-brand-red-1 transition-all duration-200"
+            onClick={handleToggleNavMobile}
           >
             <svg
               width="31"

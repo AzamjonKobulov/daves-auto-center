@@ -1,3 +1,5 @@
+import { AnimatePresence, motion } from 'framer-motion';
+
 import HeroBlog from '../components/pages/blog/HeroBlog';
 import FamilyOwnedSection from '../components/pages/blog/FamilyOwnedSection';
 import RepairSection from '../components/pages/blog/RepairSection';
@@ -10,7 +12,7 @@ import BottomLogoCarousel from '../components/shared/BottomLogoCarousel';
 
 const page = () => {
   return (
-    <div>
+    <>
       <HeroBlog />
       <FamilyOwnedSection />
       <RepairSection />
@@ -20,7 +22,7 @@ const page = () => {
       <ReviewsSection />
       <BookSection />
       <BottomLogoCarousel />
-    </div>
+    </>
   );
 };
 

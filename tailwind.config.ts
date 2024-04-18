@@ -51,6 +51,7 @@ const config: Config = {
       },
       spacing: {
         50: '3.125rem',
+        52: '3.25rem',
         sixty: '3.75rem',
         70: '4.375rem',
         74: '4.625rem',
@@ -65,6 +66,7 @@ const config: Config = {
         17: '1.0625rem',
         19: '1.1875rem',
         23: '1.4375rem',
+        40: '2.5rem',
         70: '4.375rem',
       },
       borderRadius: {

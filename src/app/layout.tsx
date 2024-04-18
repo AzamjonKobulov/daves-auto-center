@@ -4,6 +4,7 @@ import './globals.css';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import MobileMenuContextProvider from './contexts/MobileMenuContext';
+import AccountContextProvider from './contexts/AccountContext';
 
 const poppins = Poppins({
   weight: ['300', '400', '500', '600', '700'],
@@ -21,11 +22,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <MobileMenuContextProvider>
-        <body className={poppins.className}>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-        </body>
+        <AccountContextProvider>
+          <body className={poppins.className}>
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+          </body>
+        </AccountContextProvider>
       </MobileMenuContextProvider>
     </html>
   );

@@ -3,6 +3,131 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useAccount } from '@/app/contexts/AccountContext';
+import { usePathname } from 'next/navigation';
+
+interface Link {
+  href: string;
+  icon: ({ className }: { className: string }) => JSX.Element;
+  name: string;
+}
+
+const links: Link[] = [
+  {
+    href: '/account',
+    icon: ({ className }) => (
+      <svg
+        width="31"
+        height="30"
+        viewBox="0 0 31 30"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+        className={`fill-brand-blue-1 group-hover:fill-brand-red-1 transition-all duration-200 ${className}`}
+      >
+        <path d="M15.375 5C16.7011 5 17.9729 5.52678 18.9105 6.46447C19.8482 7.40215 20.375 8.67392 20.375 10C20.375 11.3261 19.8482 12.5979 18.9105 13.5355C17.9729 14.4732 16.7011 15 15.375 15C14.0489 15 12.7771 14.4732 11.8395 13.5355C10.9018 12.5979 10.375 11.3261 10.375 10C10.375 8.67392 10.9018 7.40215 11.8395 6.46447C12.7771 5.52678 14.0489 5 15.375 5ZM15.375 17.5C20.9 17.5 25.375 19.7375 25.375 22.5V25H5.375V22.5C5.375 19.7375 9.85 17.5 15.375 17.5Z" />
+      </svg>
+    ),
+    name: 'Account',
+  },
+  {
+    href: '/account/orders',
+    icon: ({ className }) => (
+      <svg
+        width="31"
+        height="30"
+        viewBox="0 0 31 30"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+        className={`fill-brand-blue-1 stroke-brand-blue-1 group-hover:stroke-brand-red-1 group-hover:fill-brand-red-1 transition-all duration-200 ${className}`}
+      >
+        <path
+          d="M20.375 7H10.375C9.27043 7 8.375 7.89543 8.375 9V22C8.375 23.1046 9.27043 24 10.375 24H20.375C21.4796 24 22.375 23.1046 22.375 22V9C22.375 7.89543 21.4796 7 20.375 7Z"
+          stroke-width="2"
+        />
+        <path
+          d="M12.375 12H18.375M12.375 16H18.375M12.375 20H16.375"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+      </svg>
+    ),
+    name: 'Orders',
+  },
+  {
+    href: '/account/appointments',
+    icon: ({ className }) => (
+      <svg
+        width="31"
+        height="30"
+        viewBox="0 0 31 30"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+        className={`fill-brand-blue-1 stroke-brand-blue-1 group-hover:stroke-brand-red-1 group-hover:fill-brand-red-1 transition-all duration-200 ${className}`}
+      >
+        <path
+          d="M20.375 7H10.375C9.27043 7 8.375 7.89543 8.375 9V22C8.375 23.1046 9.27043 24 10.375 24H20.375C21.4796 24 22.375 23.1046 22.375 22V9C22.375 7.89543 21.4796 7 20.375 7Z"
+          stroke-width="2"
+        />
+        <path
+          d="M12.375 12H18.375M12.375 16H18.375M12.375 20H16.375"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+      </svg>
+    ),
+    name: 'Appointments',
+  },
+  {
+    href: '/account/favorites',
+    icon: ({ className }) => (
+      <svg
+        width="31"
+        height="30"
+        viewBox="0 0 31 30"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+        className={`fill-brand-blue-1 group-hover:fill-brand-red-1 ${className}`}
+      >
+        <path d="M8.375 22.7804V6C8.375 5.44772 8.82272 5 9.375 5H22.375C22.9273 5 23.375 5.44772 23.375 6V22.8057C23.375 23.6633 22.3662 24.1231 21.7189 23.5604L16.4716 18.999C16.0929 18.6698 15.5288 18.6722 15.153 19.0047L10.0375 23.5294C9.3921 24.1003 8.375 23.6421 8.375 22.7804Z" />
+      </svg>
+    ),
+    name: 'Favorites',
+  },
+  {
+    href: '/account/addresses',
+    icon: ({ className }) => (
+      <svg
+        width="31"
+        height="30"
+        viewBox="0 0 31 30"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+        className={`fill-brand-blue-1 group-hover:fill-brand-red-1 ${className}`}
+      >
+        <path d="M25.1644 14.3837L15.983 5.20895C15.9169 5.14272 15.8384 5.09017 15.7519 5.05431C15.6655 5.01846 15.5728 5 15.4792 5C15.3857 5 15.293 5.01846 15.2065 5.05431C15.1201 5.09017 15.0416 5.14272 14.9755 5.20895L5.79406 14.3837C5.52657 14.6512 5.375 15.0145 5.375 15.3934C5.375 16.1803 6.01473 16.82 6.80158 16.82H7.76899V23.3667C7.76899 23.7612 8.08774 24.08 8.48228 24.08H14.0526V19.087H16.5492V24.08H22.4762C22.8707 24.08 23.1895 23.7612 23.1895 23.3667V16.82H24.1569C24.5358 16.82 24.8992 16.6707 25.1666 16.401C25.7217 15.8437 25.7217 14.9409 25.1644 14.3837Z" />
+      </svg>
+    ),
+    name: 'Addresses',
+  },
+  {
+    href: '/account/policy',
+    icon: ({ className }) => (
+      <svg
+        width="31"
+        height="30"
+        viewBox="0 0 31 30"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+        className={`fill-brand-blue-1 group-hover:fill-brand-red-1 ${className}`}
+      >
+        <path d="M23.4982 9.86347C23.4982 9.11195 23.0511 8.42702 22.3662 8.12261L15.7071 5.1641C15.2125 4.9453 14.6512 4.9453 14.1661 5.1641L7.50703 8.12261C6.82211 8.42702 6.375 9.11195 6.375 9.86347V14.3345C6.375 19.6142 10.028 24.5514 14.9366 25.75C17.1246 25.2173 19.0557 23.9426 20.5302 22.2207L17.5622 19.2527C16.6477 19.8571 15.5523 20.1267 14.4617 20.0157C13.3712 19.9048 12.3526 19.4201 11.5786 18.6439C10.6876 17.7515 10.1871 16.5421 10.1871 15.2811C10.1871 14.0201 10.6876 12.8106 11.5786 11.9183C12.4709 11.0273 13.6804 10.5268 14.9414 10.5268C16.2024 10.5268 17.4118 11.0273 18.3042 11.9183C19.0785 12.6934 19.5618 13.7118 19.6727 14.8018C19.7836 15.8918 19.5153 16.9867 18.913 17.9019L21.6717 20.6606C22.8228 18.7961 23.4982 16.5986 23.4982 14.3345V9.86347Z" />
+        <path d="M14.9366 18.1399C16.5128 18.1399 17.7905 16.8621 17.7905 15.286C17.7905 13.7098 16.5128 12.4321 14.9366 12.4321C13.3605 12.4321 12.0828 13.7098 12.0828 15.286C12.0828 16.8621 13.3605 18.1399 14.9366 18.1399Z" />
+      </svg>
+    ),
+    name: 'Policy',
+  },
+];
 
 const AccountNavMobile = () => {
   const {
@@ -12,6 +137,8 @@ const AccountNavMobile = () => {
     inputRef,
     handleToggleNavMobile,
   } = useAccount();
+
+  const pathname = usePathname();
 
   return (
     <motion.div
@@ -80,139 +207,26 @@ const AccountNavMobile = () => {
         </button>
       </div>
       <ul className="space-y-4">
-        <li>
-          <Link
-            href="/account"
-            className="flex items-center gap-5 text-17 group hover:text-brand-red-1 transition-all duration-200"
-            onClick={handleToggleNavMobile}
-          >
-            <svg
-              width="31"
-              height="30"
-              viewBox="0 0 31 30"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-              className="fill-brand-blue-1 group-hover:fill-brand-red-1 transition-all duration-200"
+        {links.map((link, idx) => (
+          <li key={link.href}>
+            <Link
+              href={link.href}
+              className="flex items-center gap-5 text-17 group hover:text-brand-red-1 transition-all duration-200"
+              onClick={handleToggleNavMobile}
             >
-              <path d="M15.375 5C16.7011 5 17.9729 5.52678 18.9105 6.46447C19.8482 7.40215 20.375 8.67392 20.375 10C20.375 11.3261 19.8482 12.5979 18.9105 13.5355C17.9729 14.4732 16.7011 15 15.375 15C14.0489 15 12.7771 14.4732 11.8395 13.5355C10.9018 12.5979 10.375 11.3261 10.375 10C10.375 8.67392 10.9018 7.40215 11.8395 6.46447C12.7771 5.52678 14.0489 5 15.375 5ZM15.375 17.5C20.9 17.5 25.375 19.7375 25.375 22.5V25H5.375V22.5C5.375 19.7375 9.85 17.5 15.375 17.5Z" />
-            </svg>
-            Profile
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/account/orders"
-            className="flex items-center gap-5 text-17 group hover:text-brand-red-1 transition-all duration-200"
-            onClick={handleToggleNavMobile}
-          >
-            <svg
-              width="31"
-              height="30"
-              viewBox="0 0 31 30"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-              className="fill-brand-blue-1 stroke-brand-blue-1 group-hover:stroke-brand-red-1 group-hover:fill-brand-red-1 transition-all duration-200"
-            >
-              <path
-                d="M20.375 7H10.375C9.27043 7 8.375 7.89543 8.375 9V22C8.375 23.1046 9.27043 24 10.375 24H20.375C21.4796 24 22.375 23.1046 22.375 22V9C22.375 7.89543 21.4796 7 20.375 7Z"
-                stroke-width="2"
+              <link.icon
+                className={
+                  pathname === link.href
+                    ? idx === 1 || idx === 2
+                      ? 'fill-brand-red-1 stroke-brand-red-1'
+                      : 'fill-brand-red-1'
+                    : ''
+                }
               />
-              <path
-                d="M12.375 12H18.375M12.375 16H18.375M12.375 20H16.375"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-              />
-            </svg>
-            My orders
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/account/appointments"
-            className="flex items-center gap-5 text-17 group hover:text-brand-red-1 transition-all duration-200"
-            onClick={handleToggleNavMobile}
-          >
-            <svg
-              width="31"
-              height="30"
-              viewBox="0 0 31 30"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-              className="fill-brand-blue-1 stroke-brand-blue-1 group-hover:stroke-brand-red-1 group-hover:fill-brand-red-1 transition-all duration-200"
-            >
-              <path
-                d="M20.375 7H10.375C9.27043 7 8.375 7.89543 8.375 9V22C8.375 23.1046 9.27043 24 10.375 24H20.375C21.4796 24 22.375 23.1046 22.375 22V9C22.375 7.89543 21.4796 7 20.375 7Z"
-                stroke-width="2"
-              />
-              <path
-                d="M12.375 12H18.375M12.375 16H18.375M12.375 20H16.375"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-              />
-            </svg>
-            My appointments
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/account/favorites"
-            className="flex items-center gap-5 text-17 group hover:text-brand-red-1 transition-all duration-200"
-            onClick={handleToggleNavMobile}
-          >
-            <svg
-              width="31"
-              height="30"
-              viewBox="0 0 31 30"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-              className="fill-brand-blue-1 group-hover:fill-brand-red-1"
-            >
-              <path d="M8.375 22.7804V6C8.375 5.44772 8.82272 5 9.375 5H22.375C22.9273 5 23.375 5.44772 23.375 6V22.8057C23.375 23.6633 22.3662 24.1231 21.7189 23.5604L16.4716 18.999C16.0929 18.6698 15.5288 18.6722 15.153 19.0047L10.0375 23.5294C9.3921 24.1003 8.375 23.6421 8.375 22.7804Z" />
-            </svg>
-            Favorites
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/account/addresses"
-            className="flex items-center gap-5 text-17 group hover:text-brand-red-1 transition-all duration-200"
-            onClick={handleToggleNavMobile}
-          >
-            <svg
-              width="31"
-              height="30"
-              viewBox="0 0 31 30"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-              className="fill-brand-blue-1 group-hover:fill-brand-red-1"
-            >
-              <path d="M25.1644 14.3837L15.983 5.20895C15.9169 5.14272 15.8384 5.09017 15.7519 5.05431C15.6655 5.01846 15.5728 5 15.4792 5C15.3857 5 15.293 5.01846 15.2065 5.05431C15.1201 5.09017 15.0416 5.14272 14.9755 5.20895L5.79406 14.3837C5.52657 14.6512 5.375 15.0145 5.375 15.3934C5.375 16.1803 6.01473 16.82 6.80158 16.82H7.76899V23.3667C7.76899 23.7612 8.08774 24.08 8.48228 24.08H14.0526V19.087H16.5492V24.08H22.4762C22.8707 24.08 23.1895 23.7612 23.1895 23.3667V16.82H24.1569C24.5358 16.82 24.8992 16.6707 25.1666 16.401C25.7217 15.8437 25.7217 14.9409 25.1644 14.3837Z" />
-            </svg>
-            Addresses
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/account/policy"
-            className="flex items-center gap-5 text-17 group hover:text-brand-red-1 transition-all duration-200"
-            onClick={handleToggleNavMobile}
-          >
-            <svg
-              width="31"
-              height="30"
-              viewBox="0 0 31 30"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-              className="fill-brand-blue-1 group-hover:fill-brand-red-1"
-            >
-              <path d="M23.4982 9.86347C23.4982 9.11195 23.0511 8.42702 22.3662 8.12261L15.7071 5.1641C15.2125 4.9453 14.6512 4.9453 14.1661 5.1641L7.50703 8.12261C6.82211 8.42702 6.375 9.11195 6.375 9.86347V14.3345C6.375 19.6142 10.028 24.5514 14.9366 25.75C17.1246 25.2173 19.0557 23.9426 20.5302 22.2207L17.5622 19.2527C16.6477 19.8571 15.5523 20.1267 14.4617 20.0157C13.3712 19.9048 12.3526 19.4201 11.5786 18.6439C10.6876 17.7515 10.1871 16.5421 10.1871 15.2811C10.1871 14.0201 10.6876 12.8106 11.5786 11.9183C12.4709 11.0273 13.6804 10.5268 14.9414 10.5268C16.2024 10.5268 17.4118 11.0273 18.3042 11.9183C19.0785 12.6934 19.5618 13.7118 19.6727 14.8018C19.7836 15.8918 19.5153 16.9867 18.913 17.9019L21.6717 20.6606C22.8228 18.7961 23.4982 16.5986 23.4982 14.3345V9.86347Z" />
-              <path d="M14.9366 18.1399C16.5128 18.1399 17.7905 16.8621 17.7905 15.286C17.7905 13.7098 16.5128 12.4321 14.9366 12.4321C13.3605 12.4321 12.0828 13.7098 12.0828 15.286C12.0828 16.8621 13.3605 18.1399 14.9366 18.1399Z" />
-            </svg>
-            Policy
-          </Link>
-        </li>
+              {link.name}
+            </Link>
+          </li>
+        ))}
       </ul>
     </motion.div>
   );

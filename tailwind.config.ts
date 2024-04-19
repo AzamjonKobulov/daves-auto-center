@@ -46,6 +46,7 @@ const config: Config = {
             DEFAULT: '#898989',
             100: '#F9F9F9',
             200: '#d9d9d9',
+            300: '#f8f8f8',
           },
         },
       },

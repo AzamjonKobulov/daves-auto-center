@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import LinksListOnMobile from '../policy/LinksListPolicyOnMobile';
+import LinksListOnMobile from './LinksListPolicyOnMobile';
 
 interface Link {
   name: string;
@@ -11,28 +11,16 @@ interface Link {
 
 const links: Link[] = [
   {
-    name: 'All orders',
-    href: '/account/orders/all',
+    name: 'Shipping info',
+    href: '/account/policy/shipping-info',
   },
   {
-    name: 'Unpaid',
-    href: '/account/orders/unpaid',
-  },
-  {
-    name: 'Processing',
-    href: '/account/orders/processing',
-  },
-  {
-    name: 'Shipped',
-    href: '/account/orders/shipped',
-  },
-  {
-    name: 'Review',
-    href: '/account/orders/reviews',
+    name: 'Return policy',
+    href: '/account/policy/return-policy',
   },
 ];
 
-const OrdersNav = () => {
+const PolicyNav = () => {
   const pathname = usePathname();
 
   return (
@@ -59,11 +47,8 @@ const OrdersNav = () => {
         ))}
       </ul>
       <LinksListOnMobile />
-      <button className="text-sm lg:text-xs xl:text-sm text-brand-gray/50">
-        Delete history
-      </button>
     </div>
   );
 };
 
-export default OrdersNav;
+export default PolicyNav;

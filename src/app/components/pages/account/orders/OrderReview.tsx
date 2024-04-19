@@ -1,10 +1,18 @@
+'use client';
+
+import { useState } from 'react';
+
 import Image from 'next/image';
 import Button from '@/app/components/shared/Button';
 
 const OrderReview = () => {
+  const [qty, setQty] = useState<number>(1);
+
+  const addQty = () => setQty((qty) => qty + 1);
+  const subsQty = () => setQty(qty > 1 ? qty - 1 : 1);
   return (
     <div className="max-w-2xl mx-auto space-y-10 sm:space-y-9 sm:px-6 py-10 lg:py-12">
-      <div className="flex items-center justify-between">
+      <div className="flex items-stretch sm:items-center justify-between">
         <div className="flex items-center gap-2.5">
           <div className="w-20 h-[5.5rem] sm:w-100 sm:h-100 shrink-0 overflow-hidden">
             <Image
@@ -15,14 +23,29 @@ const OrderReview = () => {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="w-full flex flex-col sm:flex-row lg:flex-col xl:flex-row sm:items-center lg:items-start xl:items-center gap-5 sm:gap-10 lg:gap-2 justify-between">
+          <div className="w-full flex flex-col gap-5">
             <div className="">
               <p className="text-17 font-semibold">Classic t-shirt</p>
               <p className="text-sm">Size: M</p>
             </div>
+            <div className="w-fit h-10 sm:hidden grid grid-cols-3 text-15 text-brand-dark bg-brand-gray-300 border border-brand-gray/50 rounded px-3">
+              <button
+                className="h-full min-w-5 grid place-content-center"
+                onClick={subsQty}
+              >
+                -
+              </button>
+              <p className="h-full min-w-5 grid place-content-center">{qty}</p>
+              <button
+                className="h-full min-w-5 grid place-content-center"
+                onClick={addQty}
+              >
+                +
+              </button>
+            </div>
           </div>
         </div>
-        <button className="flex items-center gap-2.5 text-15">
+        <button className="hidden sm:flex items-center gap-2.5 text-15">
           Go back
           <svg
             width="16"
@@ -38,6 +61,23 @@ const OrderReview = () => {
             />
           </svg>
         </button>
+        <div className="flex sm:hidden flex-col items-end justify-between">
+          <button>
+            <svg
+              width="25"
+              height="24"
+              viewBox="0 0 25 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19.5 4H16L15 3H10L9 4H5.5V6H19.5M6.5 19C6.5 19.5304 6.71071 20.0391 7.08579 20.4142C7.46086 20.7893 7.96957 21 8.5 21H16.5C17.0304 21 17.5391 20.7893 17.9142 20.4142C18.2893 20.0391 18.5 19.5304 18.5 19V7H6.5V19Z"
+                fill="#898989"
+              />
+            </svg>
+          </button>
+          <p className="text-17">$35.00</p>
+        </div>
       </div>
       <div className="space-y-6 sm:space-y-4">
         <div className="flex gap-2.5">

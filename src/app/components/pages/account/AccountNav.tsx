@@ -146,7 +146,7 @@ const AccountNav = () => {
       <AnimatePresence>
         {isNavMobileOpen && <AccountNavMobile />}
       </AnimatePresence>
-      <div className="w-72 h-96 hidden lg:block relative bg-white rounded-20 shadow-privacy pt-20 px-9 pb-9">
+      <div className="w-72 h-fit hidden lg:block relative bg-white rounded-20 shadow-privacy pt-20 px-9 pb-9">
         <button
           onClick={handleUploadImageClick}
           className="w-[7.375rem] h-[7.375rem] shrink-0 absolute -top-14 left-1/2 -translate-x-1/2 bg-brand-gray-100 border-[0.1875rem] border-brand-blue-1 rounded-full"
@@ -223,6 +223,33 @@ const AccountNav = () => {
               </Link>
             </li>
           ))}
+          <Link
+            href="/"
+            className="group flex items-center gap-5 border-t border-brand-gray/50 pt-5"
+          >
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 30 30"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+              className="fill-brand-blue-1 group-hover:fill-brand-red-1 transition-all duration-200"
+            >
+              <g clip-path="url(#clip0_739_27783)">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M20.5 2.5C21.4946 2.5 22.4484 2.89509 23.1517 3.59835C23.8549 4.30161 24.25 5.25544 24.25 6.25V23.75C24.25 24.7446 23.8549 25.6984 23.1517 26.4017C22.4484 27.1049 21.4946 27.5 20.5 27.5H13C12.0054 27.5 11.0516 27.1049 10.3483 26.4017C9.64509 25.6984 9.25 24.7446 9.25 23.75V6.25C9.25 5.25544 9.64509 4.30161 10.3483 3.59835C11.0516 2.89509 12.0054 2.5 13 2.5H20.5ZM7.63375 9.11625C7.39934 8.88191 7.08146 8.75027 6.75 8.75027C6.41854 8.75027 6.10066 8.88191 5.86625 9.11625L0.866249 14.1163C0.63191 14.3507 0.500267 14.6685 0.500267 15C0.500267 15.3315 0.63191 15.6493 0.866249 15.8837L5.86625 20.8838C6.102 21.1114 6.41776 21.2374 6.7455 21.2346C7.07325 21.2317 7.38676 21.1003 7.61852 20.8685C7.85028 20.6368 7.98174 20.3232 7.98459 19.9955C7.98744 19.6678 7.86145 19.352 7.63375 19.1163L4.7675 16.25H15.5C15.8315 16.25 16.1495 16.1183 16.3839 15.8839C16.6183 15.6495 16.75 15.3315 16.75 15C16.75 14.6685 16.6183 14.3505 16.3839 14.1161C16.1495 13.8817 15.8315 13.75 15.5 13.75H4.7675L7.63375 10.8837C7.86809 10.6493 7.99973 10.3315 7.99973 10C7.99973 9.66854 7.86809 9.35066 7.63375 9.11625Z"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_739_27783">
+                  <rect width="30" height="30" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+            Log out
+          </Link>
         </ul>
       </div>
     </>

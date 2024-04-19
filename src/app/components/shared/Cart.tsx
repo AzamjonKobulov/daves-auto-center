@@ -12,12 +12,11 @@ const Cart: React.FC<{ onToggleCart: () => void }> = ({ onToggleCart }) => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
       className="fixed inset-0 z-[100] text-brand-dark bg-black/50"
-      onClick={onToggleCart}
     >
       <motion.div
-        initial={{ opacity: 0, x: 10 }}
-        animate={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0, x: 10 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
         transition={{ duration: 0.2 }}
         className="max-w-96 lg:max-w-[40rem] w-full relative min-h-screen flex flex-col justify-between bg-white ml-auto px-4 pt-16 lg:px-10 pb-10"
       >

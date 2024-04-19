@@ -29,7 +29,7 @@ const links: Link[] = [
     name: 'Account',
   },
   {
-    href: '/account/orders',
+    href: '/account/orders/all',
     icon: ({ className }) => (
       <svg
         width="31"
@@ -54,7 +54,7 @@ const links: Link[] = [
     name: 'Orders',
   },
   {
-    href: '/account/appointments',
+    href: '/account/appointments/zoom-call',
     icon: ({ className }) => (
       <svg
         width="31"
@@ -111,7 +111,7 @@ const links: Link[] = [
     name: 'Addresses',
   },
   {
-    href: '/account/policy',
+    href: '/account/policy/shipping-info',
     icon: ({ className }) => (
       <svg
         width="31"

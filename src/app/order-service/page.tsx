@@ -37,7 +37,7 @@ const Page = () => {
                 Please choose convinient time before cheking out.
               </p>
             </div>
-            <div className="py-10 lg:px-4">
+            <div className="pb-10 lg:px-4">
               <Calendar onChange={onChange} value={value} />
             </div>
           </div>

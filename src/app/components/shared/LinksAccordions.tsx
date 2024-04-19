@@ -185,11 +185,11 @@ const accordionData = [
         path: '/',
       },
       {
-        name: 'Blog',
+        name: 'Blog1',
         path: '/',
       },
       {
-        name: 'Blog',
+        name: 'Blog2',
         path: '/',
       },
     ],

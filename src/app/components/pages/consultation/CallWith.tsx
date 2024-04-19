@@ -38,8 +38,8 @@ const CallWith: React.FC<CallWithProps> = ({ onToggleCallWith }) => {
             <path
               d="M20 20L4 4M20 4L4 20"
               stroke="#232323"
-              stroke-width="2"
-              stroke-linecap="round"
+              strokeWidth="2"
+              strokeLinecap="round"
             />
           </svg>
         </button>

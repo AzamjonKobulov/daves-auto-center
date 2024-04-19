@@ -112,7 +112,7 @@ const links: Link[] = [
     name: 'Addresses',
   },
   {
-    href: '/account/policy/shipping-policy',
+    href: '/account/policy/shipping-info',
     icon: ({ className }) => (
       <svg
         width="31"

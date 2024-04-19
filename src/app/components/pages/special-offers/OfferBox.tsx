@@ -27,11 +27,7 @@ const OfferBox: React.FC<OfferBoxProps> = ({ offer, index }) => {
           />
         </div>
         <div className="space-y-2 mt-2.5">
-          <p
-            className={`text-17 leading-7 ${index === 2 ? 'lg:max-w-52' : ''}`}
-          >
-            {offer.text}
-          </p>
+          <p className="text-17 leading-7">{offer.text}</p>
           <h5 className="text-xl font-bold">{offer.cost}</h5>
         </div>
       </div>

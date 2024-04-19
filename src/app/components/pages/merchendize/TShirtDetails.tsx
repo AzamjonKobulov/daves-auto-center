@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import TShritImages from '../home/TShritImages';
+import TShritImages from './TShritImages';
 import TShirtInfo from './TShirtInfo';
 
 const images = [

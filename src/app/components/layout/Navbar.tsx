@@ -14,12 +14,12 @@ import Menu from '../shared/Menu';
 import MessagePoppup from '../shared/MessagePoppup';
 import { usePathname } from 'next/navigation';
 import { useAccount } from '@/app/contexts/AccountContext';
+import Cart from '../shared/Cart';
 
 const Navbar = () => {
   const { handleToggleMobMenu } = useMobileMenu();
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const [isMessagePoppupOpen, setIsMessagePoppupOpen] =
-    useState<boolean>(false);
+  const [isCartOpen, setIsCartOpen] = useState<boolean>(false);
 
   const { setIsNavMobileOpen, handleToggleNavMobile } = useAccount();
 
@@ -30,8 +30,8 @@ const Navbar = () => {
     document.body.classList.toggle('overflow-hidden');
   };
 
-  const handleToggleMessagePoppup = () => {
-    setIsMessagePoppupOpen((open) => !open);
+  const handleToggleCart = () => {
+    setIsCartOpen((open) => !open);
     document.body.classList.toggle('overflow-hidden');
   };
 
@@ -39,11 +39,9 @@ const Navbar = () => {
     <header className="sticky top-0 z-50 lg:h-100 bg-brand-blue text-white">
       <AnimatePresence>{isMenuOpen && <Menu />}</AnimatePresence>
       <MobileMenu />
-      <MessengerButton onToggleMessage={handleToggleMessagePoppup} />
+      <MessengerButton />
       <AnimatePresence>
-        {isMessagePoppupOpen && (
-          <MessagePoppup onToggleMessage={handleToggleMessagePoppup} />
-        )}
+        {isCartOpen && <Cart onToggleCart={handleToggleCart} />}
       </AnimatePresence>
       <nav className="max-w-base mx-auto flex items-center justify-between py-2 lg:py-4 px-5">
         {/* Logo & Socials */}
@@ -109,7 +107,7 @@ const Navbar = () => {
             )}
           </button>
           {/* Cart */}
-          <button>
+          <button onClick={handleToggleCart}>
             <svg
               width="30"
               height="30"

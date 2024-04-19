@@ -6,8 +6,6 @@ import AccountNav from '../components/pages/account/AccountNav';
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const pathname = usePathname();
 
-  console.log(pathname);
-
   return (
     <div className="max-w-base mx-auto flex gap-5  lg:pt-24 lg:pb-56 lg:px-5">
       <AccountNav />

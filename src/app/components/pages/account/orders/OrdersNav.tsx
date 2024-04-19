@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import LinksListOnMobile from '../policy/LinksListPolicyOnMobile';
+import LinksListOnMobile from '../orders/LinksListOnMobile';
 
 interface Link {
   name: string;

@@ -55,7 +55,7 @@ const links: Link[] = [
     name: 'Orders',
   },
   {
-    href: '/account/appointments',
+    href: '/account/appointments/zoom-call',
     icon: ({ className }) => (
       <svg
         width="31"

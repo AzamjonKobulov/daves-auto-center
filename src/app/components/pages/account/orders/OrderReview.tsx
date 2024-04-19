@@ -1,15 +1,12 @@
 'use client';
 
-import { useState } from 'react';
-
 import Image from 'next/image';
 import Button from '@/app/components/shared/Button';
+import useQuantity from '@/app/hooks/useQuantity';
 
 const OrderReview = () => {
-  const [qty, setQty] = useState<number>(1);
+  const { qty, setQty, addQty, subsQty } = useQuantity();
 
-  const addQty = () => setQty((qty) => qty + 1);
-  const subsQty = () => setQty(qty > 1 ? qty - 1 : 1);
   return (
     <div className="max-w-2xl mx-auto space-y-10 sm:space-y-9 sm:px-6 py-10 lg:py-12">
       <div className="flex items-stretch sm:items-center justify-between">

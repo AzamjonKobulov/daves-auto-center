@@ -1,14 +1,9 @@
-'use client';
-
 import Button from '@/app/components/shared/Button';
+import useQuantity from '@/app/hooks/useQuantity';
 import Image from 'next/image';
-import { useState } from 'react';
 
 const Product = () => {
-  const [qty, setQty] = useState<number>(1);
-
-  const addQty = () => setQty((qty) => qty + 1);
-  const subsQty = () => setQty(qty > 1 ? qty - 1 : 1);
+  const { qty, setQty, addQty, subsQty } = useQuantity();
 
   return (
     <div className="border-b border-brand-gray/50 py-8 sm:py-4">

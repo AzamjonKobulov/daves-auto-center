@@ -147,7 +147,7 @@ const Blocks = () => {
           alt="Existing customers"
           width={329}
           height={240}
-          className="w-[20.5625rem] h-[15rem] sm:hidden group-hover:scale-110 transition-all duration-200"
+          className="w-[20.5625rem] h-48 sm:hidden group-hover:scale-110 transition-all duration-200"
         />
       </Link>
       {/* Engines */}
@@ -190,7 +190,7 @@ const Blocks = () => {
           alt="Engines"
           width={329}
           height={240}
-          className="w-[20.5625rem] h-[15rem] sm:hidden ml-auto group-hover:scale-110 transition-all duration-200"
+          className="w-[20.5625rem] h-48 sm:hidden ml-auto group-hover:scale-110 transition-all duration-200"
         />
       </Link>
       {/* Merchandize */}

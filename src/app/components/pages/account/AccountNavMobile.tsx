@@ -148,6 +148,25 @@ const AccountNavMobile = () => {
       transition={{ duration: 0.2 }}
       className="fixed inset-x-0 z-50 bottom-0 top-12 sm:top-16 w-full space-y-14 lg:hidden bg-white  shadow-privacy pt-12 px-14"
     >
+      <button
+        onClick={handleToggleNavMobile}
+        className="absolute top-5 right-5"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="w-6 h-6"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M6 18 18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
       <div className="flex items-center justify-center">
         <button
           onClick={handleUploadImageClick}

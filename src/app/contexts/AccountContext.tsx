@@ -7,6 +7,8 @@ import {
   useRef,
   FC,
   ChangeEvent,
+  Dispatch,
+  SetStateAction,
 } from 'react';
 
 interface AccountContextValue {
@@ -16,6 +18,7 @@ interface AccountContextValue {
   handleUploadImage: (e: ChangeEvent<HTMLInputElement>) => void;
   isNavMobileOpen: boolean;
   handleToggleNavMobile: () => void;
+  setIsNavMobileOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 interface AccountContextProps {
@@ -64,6 +67,7 @@ const AccountContextProvider: FC<AccountContextProps> = ({ children }) => {
     handleUploadImage,
     isNavMobileOpen,
     handleToggleNavMobile,
+    setIsNavMobileOpen,
   };
 
   return (

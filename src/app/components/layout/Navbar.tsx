@@ -21,7 +21,7 @@ const Navbar = () => {
   const [isMessagePoppupOpen, setIsMessagePoppupOpen] =
     useState<boolean>(false);
 
-  const { handleToggleNavMobile } = useAccount();
+  const { setIsNavMobileOpen, handleToggleNavMobile } = useAccount();
 
   const pathname = usePathname();
 
@@ -195,7 +195,13 @@ const Navbar = () => {
             </svg>
           </Link>
           {/* Menu Button */}
-          <button className="lg:hidden" onClick={handleToggleMobMenu}>
+          <button
+            className="lg:hidden"
+            onClick={() => {
+              handleToggleMobMenu();
+              setIsNavMobileOpen(false);
+            }}
+          >
             <svg
               width="40"
               height="40"

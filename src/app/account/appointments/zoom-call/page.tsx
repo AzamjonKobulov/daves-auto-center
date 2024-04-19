@@ -1,5 +1,11 @@
+import ZoomCall from '@/app/components/pages/account/appointments/ZoomCall';
+
 const page = () => {
-  return <div>Zoom call</div>;
+  return (
+    <div>
+      <ZoomCall />
+    </div>
+  );
 };
 
 export default page;

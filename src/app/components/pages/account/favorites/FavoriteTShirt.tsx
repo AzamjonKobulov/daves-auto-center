@@ -7,7 +7,7 @@ import Image from 'next/image';
 import Button from '@/app/components/shared/Button';
 
 const FavoriteTShirt = () => {
-  const [liked, setLiked] = useState<boolean>(false);
+  const [liked, setLiked] = useState<boolean>(true);
 
   const handleToggleLiked = () => {
     setLiked((liked) => !liked);
@@ -67,11 +67,14 @@ const FavoriteTShirt = () => {
       </div>
       <Button
         red
-        className="hidden lg:group-hover:block h-sixty w-[90%] absolute left-1/2 top-1/3 -translate-y-1/2 -translate-x-1/2"
+        className="hidden lg:group-hover:block h-50 xl:h-sixty w-[90%] absolute left-1/2 top-1/3 -translate-y-1/2 -translate-x-1/2 !text-sm !px-5 xl:!text-17 xl:!px-8"
       >
         add to cart
       </Button>
-      <button className="hidden lg:group-hover:block absolute bottom-2.5 right-2.5">
+      <button
+        onClick={handleToggleLiked}
+        className="hidden lg:group-hover:block absolute bottom-2.5 right-2.5"
+      >
         <svg
           width="24"
           height="24"

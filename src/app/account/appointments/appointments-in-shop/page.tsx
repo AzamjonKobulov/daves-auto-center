@@ -1,5 +1,11 @@
+import EmailUs from '@/app/components/pages/account/appointments/EmailUs';
+
 const page = () => {
-  return <div>Appointments in the shop</div>;
+  return (
+    <div>
+      <EmailUs />
+    </div>
+  );
 };
 
 export default page;

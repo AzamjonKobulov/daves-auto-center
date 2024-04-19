@@ -38,7 +38,7 @@ const LinksListOnMobile = () => {
   const { isOpen, handleToggleDropdown, dropdownRef } = useDropdown();
 
   return (
-    <div className="sm:hidden h-full w-80 mx-auto relative" ref={dropdownRef}>
+    <div className="md:hidden h-full w-80 mx-auto relative" ref={dropdownRef}>
       <button
         className="w-full h-11 flex items-center justify-between gap-4 border border-brand-dark rounded-md px-4 lg:px-8"
         onClick={handleToggleDropdown}

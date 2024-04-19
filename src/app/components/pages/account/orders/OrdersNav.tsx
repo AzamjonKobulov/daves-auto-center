@@ -36,8 +36,8 @@ const OrdersNav = () => {
   const pathname = usePathname();
 
   return (
-    <div className="flex items-center justify-between sm:border-b border-brand-gray/50 pb-4">
-      <ul className="hidden sm:flex items-center gap-10 text-sm">
+    <div className="flex flex-col md:flex-row gap-5 md:gap-0 items-center justify-between sm:border-b border-brand-gray/50 pb-4">
+      <ul className="hidden md:flex items-center gap-3.5 xl:gap-10 text-sm">
         {links.map((link) => (
           <li key={link.name}>
             <Link
@@ -54,6 +54,9 @@ const OrdersNav = () => {
         ))}
       </ul>
       <LinksListOnMobile />
+      <button className="text-sm text-brand-gray/50">
+        Delete orders history
+      </button>
     </div>
   );
 };

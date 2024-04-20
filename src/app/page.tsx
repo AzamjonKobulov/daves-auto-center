@@ -7,7 +7,6 @@ import WhyToChooseUsSection from './components/pages/home/WhyToChooseUsSection';
 import BookSection from './components/shared/BookSection';
 import ReviewsSection from './components/shared/ReviewsSection';
 import PostsSection from './components/pages/home/PostsSection';
-import Chat from './components/shared/Chat';
 
 export default function Home() {
   return (

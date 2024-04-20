@@ -5,7 +5,7 @@ const TShritImages: React.FC<{ images: string[] }> = ({ images }) => {
   const [activeImage, setActiveImage] = useState<string>(images[0]);
 
   return (
-    <div className="flex-1 lg:sticky top-0">
+    <div className="flex-1 lg:sticky top-32">
       <div className="aspect-square relative bg-white rounded-20 overflow-hidden">
         <Image
           src={activeImage}

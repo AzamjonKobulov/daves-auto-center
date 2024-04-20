@@ -18,7 +18,9 @@ const TShirtDetails = () => {
 
   return (
     <div className="relative flex flex-col lg:flex-row justify-between gap-16">
-      <TShritImages images={images} />
+      <div className="lg:sticky">
+        <TShritImages images={images} />
+      </div>
       <TShirtInfo
         sizes={sizes}
         selectedSize={selectedSize}

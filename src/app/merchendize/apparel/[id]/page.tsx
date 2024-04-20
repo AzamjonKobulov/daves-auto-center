@@ -6,7 +6,7 @@ import TShirt from '@/app/components/shared/TShirt';
 const Page = () => {
   return (
     <>
-      <section className="relative pt-10 pb-36">
+      <section className="pt-10 pb-36">
         <div className="max-w-base mx-auto space-y-sixty lg:space-y-36 px-5">
           <TShirtDetails />
           <div className="space-y-10 lg:space-y-24">

@@ -142,10 +142,9 @@ input[type='checkbox']:checked + div svg {
 
 /* Styling the scrollbar */
 ::-webkit-scrollbar {
-  width: 4px; /* width of the scrollbar */
+  width: 4px;
 }
 
-/* Styling the track */
 ::-webkit-scrollbar-track {
   background-color: #f1f1f1; /* color of the track */
 }
@@ -179,4 +178,97 @@ input[type='checkbox']:checked + div svg {
 
 .swiper-pagination-bullet-active {
   @apply lg:!w-4 lg:!h-4 !bg-brand-blue-1;
+}
+
+.slider {
+  position: relative;
+  width: 200px;
+}
+
+.slider__track,
+.slider__range,
+.slider__left-value,
+.slider__right-value {
+  position: absolute;
+}
+
+.slider__track,
+.slider__range {
+  border-radius: 3px;
+  height: 5px;
+}
+
+.slider__track {
+  background-color: #ced4da;
+  width: 100%;
+  z-index: 1;
+}
+
+.slider__range {
+  background-color: #023e6a;
+  z-index: 2;
+}
+
+.slider__left-value,
+.slider__right-value {
+  color: #dee2e6;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.slider__left-value {
+  left: 6px;
+}
+
+.slider__right-value {
+  right: -4px;
+}
+
+/* Removing the default appearance */
+.thumb,
+.thumb::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.thumb {
+  pointer-events: none;
+  position: absolute;
+  height: 0;
+  width: 200px;
+  outline: none;
+}
+
+.thumb--left {
+  z-index: 3;
+}
+
+.thumb--right {
+  z-index: 4;
+}
+
+/* For Chrome browsers */
+.thumb::-webkit-slider-thumb {
+  background-color: #023e6a;
+  border: 1px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 11px;
+  width: 11px;
+  margin-top: 4px;
+  pointer-events: all;
+  position: relative;
+}
+
+/* For Firefox browsers */
+.thumb::-moz-range-thumb {
+  background-color: #023e6a;
+  border: 1px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 11px;
+  width: 11px;
+  margin-top: 4px;
+  pointer-events: all;
+  position: relative;
 }

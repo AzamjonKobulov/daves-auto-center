@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import useDropdown from '@/app/hooks/useDropdown';
+import DoubleRangePriceSlider from './DoubleRangePriceSlider';
 
 const PriceDropdown = () => {
   const { isOpen, handleToggleDropdown, dropdownRef } = useDropdown();
@@ -36,28 +37,15 @@ const PriceDropdown = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="absolute w-full bg-white rounded-10 shadow-review mt-3.5 py-3 px-4"
+            className="absolute z-20 w-full h-20 flex items-end justify-center bg-white rounded-10 shadow-review mt-3.5 pt-3 pb-7 px-4"
           >
-            <div className="space-y-2.5">
-              {/* Range Slider filtered costs  */}
-              <p className="w-full flex items-center justify-between">
-                <span>$0.00</span>
-                <span>$300.00</span>
-              </p>
-
-              {/* Range Slider */}
-              <div className="w-full relative h-1.5 bg-brand-blue-1">
-                {/* Slider right track */}
-                <button className="w-2.5 h-2.5 shrink-0 absolute -left-px -top-0.5 grid place-content-center bg-white rounded-full">
-                  <span className="w-2 h-2 block shrink-0  bg-brand-blue-1 rounded-full"></span>
-                </button>
-
-                {/* Slider left track */}
-                <button className="w-2.5 h-2.5 shrink-0 absolute -right-px -top-0.5 grid place-content-center bg-white rounded-full">
-                  <span className="w-2 h-2 block shrink-0  bg-brand-blue-1 rounded-full"></span>
-                </button>
-              </div>
-            </div>
+            <DoubleRangePriceSlider
+              min={0}
+              max={300}
+              onChange={({ min, max }) =>
+                console.log(`min = ${min}, max = ${max}`)
+              }
+            />
           </motion.div>
         )}
       </AnimatePresence>

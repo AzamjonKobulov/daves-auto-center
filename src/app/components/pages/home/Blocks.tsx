@@ -140,7 +140,7 @@ const Blocks = () => {
           alt="Existing customers"
           width={329}
           height={240}
-          className="hidden sm:block sm:h-auto group-hover:scale-110 transition-all duration-200"
+          className="hidden sm:block w-full sm:h-auto group-hover:scale-110 transition-all duration-200"
         />
         <Image
           src="/assets/images/img-ford-mobile.png"

@@ -107,7 +107,7 @@ const Navbar = () => {
             )}
           </button>
           {/* Cart */}
-          <button onClick={handleToggleCart}>
+          <button type="button" onClick={handleToggleCart}>
             <svg
               width="30"
               height="30"
@@ -199,6 +199,7 @@ const Navbar = () => {
               handleToggleMobMenu();
               setIsNavMobileOpen(false);
             }}
+            type="button"
           >
             <svg
               width="40"

@@ -1,6 +1,9 @@
 const MessengerButton = () => {
   return (
-    <button className="fixed right-10 bottom-10 w-12 h-12 lg:right-70 lg:bottom-70 lg:w-70 lg:h-70 shrink-0 z-[60] grid place-content-center bg-white border border-brand-gray/20 rounded-full shadow-messengerBtn">
+    <button
+      type="button"
+      className="fixed right-10 bottom-10 w-12 h-12 lg:right-70 lg:bottom-70 lg:w-70 lg:h-70 shrink-0 z-[60] grid place-content-center bg-white border border-brand-gray/20 rounded-full shadow-messengerBtn"
+    >
       <svg
         width="47"
         height="47"

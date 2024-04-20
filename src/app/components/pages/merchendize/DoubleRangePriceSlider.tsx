@@ -82,7 +82,7 @@ const DoubleRangePriceSlider: React.FC<DoubleRangePriceSliderProps> = ({
         }}
         className="thumb thumb--right"
       />
-      <div className="slider">
+      <div className="range-slider">
         <div className="slider__track" />
         <div ref={range} className="slider__range" />
         <div className="absolute -top-10 w-full">

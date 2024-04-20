@@ -180,7 +180,7 @@ input[type='checkbox']:checked + div svg {
   @apply lg:!w-4 lg:!h-4 !bg-brand-blue-1;
 }
 
-.slider {
+.range-slider {
   position: relative;
   width: 200px;
 }

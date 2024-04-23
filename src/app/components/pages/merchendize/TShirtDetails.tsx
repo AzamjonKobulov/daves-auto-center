@@ -17,8 +17,8 @@ const TShirtDetails = () => {
   const { qty, setQty, addQty, subsQty } = useQuantity();
 
   return (
-    <div className="relative flex flex-col lg:flex-row justify-between gap-16">
-      <div className="lg:sticky top-0">
+    <div className="relative grid md:grid-cols-5 lg:grid-cols-2 gap-7 lg:gap-10 2xl:gap-16">
+      <div className="md:col-span-3 lg:col-span-1 lg:sticky top-0">
         <TShritImages images={images} />
       </div>
       <TShirtInfo

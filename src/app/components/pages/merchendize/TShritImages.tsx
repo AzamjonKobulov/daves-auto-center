@@ -5,8 +5,8 @@ const TShritImages: React.FC<{ images: string[] }> = ({ images }) => {
   const [activeImage, setActiveImage] = useState<string>(images[0]);
 
   return (
-    <div className="flex-1 lg:sticky top-32">
-      <div className="w-full aspect-square relative bg-white rounded-20 overflow-hidden">
+    <div className="flex flex-col xs:flex-row-reverse gap-2.5 md:gap-4 md:sticky top-20 lg:top-32">
+      <div className="w-full aspect-square relative bg-white rounded-10 md:rounded-20 overflow-hidden">
         <Image
           src={activeImage}
           width={600}
@@ -15,7 +15,7 @@ const TShritImages: React.FC<{ images: string[] }> = ({ images }) => {
           className="w-full h-full object-cover"
         />
       </div>
-      <div className="flex items-center gap-2.5 lg:gap-5 mt-5">
+      <div className="flex xs:flex-col items-center gap-2.5 lg:gap-5">
         {images.map((image, idx) => (
           <button
             key={idx}

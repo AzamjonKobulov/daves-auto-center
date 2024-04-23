@@ -21,7 +21,7 @@ const TShirtInfo: React.FC<TShirtInfoProps> = ({
   subsQty,
 }) => {
   return (
-    <div className="lg:w-[33.4375rem] space-y-16">
+    <div className="md:col-span-2 lg:col-span-1 space-y-16">
       <div className="space-y-8 lg:space-y-10">
         <div className="space-y-3">
           <h2 className="text-2xl lg:text-4xl font-bold">
@@ -65,7 +65,7 @@ const TShirtInfo: React.FC<TShirtInfoProps> = ({
             </button>
           </div>
         </div>
-        <Button red className="h-sixty lg:h-70 w-full">
+        <Button red className="h-50 lg:h-sixty w-full text-sm lg:text-base">
           add to cart
         </Button>
       </div>

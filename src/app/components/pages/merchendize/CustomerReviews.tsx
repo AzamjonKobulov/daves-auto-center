@@ -6,7 +6,7 @@ const CustomerReviews = () => {
     <div className="space-y-8">
       <h2>Customer reviews</h2>
 
-      <div className="flex  items-center justify-between">
+      <div className="flex md:flex-col lg:flex-row lg:items-center gap-5 justify-between">
         <div className="space-y-1">
           <div className="flex items-center gap-4">
             <p className="font-bold text-17">5.0</p>
@@ -32,7 +32,7 @@ const CustomerReviews = () => {
         </div>
         <Button
           blackBordered
-          className="h-10 lg:h-11 rounded-md text-sm lg:text-17 px-2.5 lg:px-8"
+          className="h-10 lg:h-11 rounded-md text-sm md:text-xs lg:text-17 px-2.5 lg:px-8"
         >
           Write a review
         </Button>

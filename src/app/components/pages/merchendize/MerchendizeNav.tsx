@@ -32,8 +32,8 @@ const MerchendizeNav = () => {
   const pathname = usePathname();
 
   return (
-    <div className="h-9 lg:h-50 bg-brand-blue/10 px-5">
-      <div className="h-full max-w-base mx-auto">
+    <div className="h-9 lg:h-50 bg-brand-blue/10">
+      <div className="h-full max-w-base mx-auto px-5">
         <div className="h-full flex items-center">
           {links.map((link) => (
             <Link

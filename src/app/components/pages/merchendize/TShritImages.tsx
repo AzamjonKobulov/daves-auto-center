@@ -6,7 +6,7 @@ const TShritImages: React.FC<{ images: string[] }> = ({ images }) => {
 
   return (
     <div className="flex-1 lg:sticky top-32">
-      <div className="aspect-square relative bg-white rounded-20 overflow-hidden">
+      <div className="w-full aspect-square relative bg-white rounded-20 overflow-hidden">
         <Image
           src={activeImage}
           width={600}

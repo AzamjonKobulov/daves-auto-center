@@ -17,19 +17,21 @@ const OfferBox: React.FC<OfferBoxProps> = ({ offer, index }) => {
   return (
     <div className="flex flex-col justify-between space-y-2 text-brand-dark">
       <div>
-        <div className="h-56">
+        <div className="h-56 grid place-content-center xs:block overflow-hidden">
           <Image
             src={offer.img}
             alt="Special Offer"
             width={1000}
             height={500}
-            className="w-full h-full object-cover"
+            className="w-[90%] xs:w-2/3 mx-auto sm:mx-0 sm:w-full md:w-4/5 lg:w-full sm:h-full object-cover"
           />
         </div>
       </div>
       <div className="space-y-2.5">
-        <div className="space-y-2 mt-2.5">
-          <p className={`text-17 leading-7 ${index === 2 ? 'max-w-64' : ''}`}>
+        <div className="space-y-2">
+          <p
+            className={`text-17 leading-7 ${index === 2 ? 'lg:max-w-64' : ''}`}
+          >
             {offer.text}
           </p>
           <h5 className="text-xl font-semibold text-center sm:text-start">

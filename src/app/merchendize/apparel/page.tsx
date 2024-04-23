@@ -21,8 +21,8 @@ const Page = () => {
 
   return (
     <>
-      <section className="pt-16 pb-20 sm:pb-28 md:pb-36 lg:pb-72">
-        <div className="max-w-base mx-auto space-y-12 px-5">
+      <section className="pt-6 md:pt-10 pb-20 sm:pb-28 md:pb-36 lg:pb-72">
+        <div className="max-w-base mx-auto space-y-5 lg:space-y-10 px-5">
           <h1 className="text-[1.9375rem] sm:text-5xl md:text-6xl lg:text-70 font-bold leading-[117%] sm:leading-none lg:leading-[117%]">
             Welcome to Dave’s shop
           </h1>

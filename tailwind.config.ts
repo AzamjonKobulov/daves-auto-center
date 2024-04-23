@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       maxWidth: {
-        base: '77.25rem',
+        base: '79.125rem',
       },
       screens: {
         xs: '30rem',

@@ -5,21 +5,23 @@ import { AnimatePresence } from 'framer-motion';
 
 import Image from 'next/image';
 import Link from 'next/link';
-import MessagePoppup from '../../shared/MessagePoppup';
+import ExistingCustmersPoppup from '../../shared/ExistingCustmersPoppup';
 const Blocks = () => {
-  const [isMessagePoppupOpen, setIsMessagePoppupOpen] =
+  const [isExistingCustmersPoppupOpen, setIsExistingCustmersPoppupOpen] =
     useState<boolean>(false);
 
-  const handleToggleMessagePoppup = () => {
-    setIsMessagePoppupOpen((open) => !open);
+  const handleToggleExistingCustmersPoppup = () => {
+    setIsExistingCustmersPoppupOpen((open) => !open);
     document.body.classList.toggle('overflow-hidden');
   };
 
   return (
     <div className="max-w-base mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-10 lg:mt-14 px-5">
       <AnimatePresence>
-        {isMessagePoppupOpen && (
-          <MessagePoppup onToggleMessage={handleToggleMessagePoppup} />
+        {isExistingCustmersPoppupOpen && (
+          <ExistingCustmersPoppup
+            onToggleMessage={handleToggleExistingCustmersPoppup}
+          />
         )}
       </AnimatePresence>
       {/* Repair questions + consultation */}
@@ -113,7 +115,7 @@ const Blocks = () => {
       <Link
         href="/"
         className="sm:h-auto flex flex-col justify-between group bg-white shadow-feature rounded-2xl sm:rounded-20 overflow-hidden"
-        onClick={handleToggleMessagePoppup}
+        onClick={handleToggleExistingCustmersPoppup}
       >
         {/* Texts */}
         <div className="relative z-10 space-y-1 lg:space-y-2.5 pt-2.5 px-5 xl:px-10 sm:pt-7 xl:pt-12">

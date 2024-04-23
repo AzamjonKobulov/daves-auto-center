@@ -17,13 +17,22 @@ const WhoIsTyson: React.FC<WhoIsTysonProps> = ({
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
-      className="sm:fixed inset-0 sm:grid place-content-center z-[60] sm:bg-black/50 sm:px-5 py-5"
+      className="fixed inset-0 sm:grid place-content-center z-[60] sm:bg-black/50 overflow-auto sm:overflow-visible sm:px-5"
+      onClick={onToggleTyson}
     >
-      <div className="sm:w-4/5 lg:w-auto xl:w-auto fixed inset-0 z-[60] mx-auto lg:mx-0 lg:max-w-4xl xl:max-w-5xl  w-full sm:relative bg-white sm:rounded-10 lg:rounded-20 shadow-privacy overflow-auto sm:my-5 pt-14 sm:pt-16 px-5 pb-5 lg:p-10 xl:p-sixty">
-        <div className="h-max grid lg:grid-cols-2 gap-8 xl:gap-16">
+      <div className="sm:w-4/5 lg:w-auto mx-auto lg:mx-0 lg:max-w-4xl xl:max-w-5xl w-full sm:relative bg-white sm:rounded-10 lg:rounded-20 shadow-privacy overflow-auto sm:my-5 pt-14 sm:pt-16 px-5 pb-5 md:p-10 xl:p-sixty">
+        <div
+          className="h-max grid lg:grid-cols-2 gap-8 xl:gap-16"
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
+        >
           <button
             className="absolute top-5 right-5 lg:top-8 lg:right-8"
-            onClick={onToggleTyson}
+            onClick={(e) => {
+              e.stopPropagation();
+              onToggleTyson();
+            }}
           >
             <svg
               width="24"
@@ -46,7 +55,7 @@ const WhoIsTyson: React.FC<WhoIsTysonProps> = ({
               alt="Tyson"
               width={400}
               height={700}
-              className="w-full h-full object-cover object-top lg:object-[73%] "
+              className="w-full h-full object-cover object-top lg:object-center"
             />
           </div>
           <div className="flex flex-col justify-between lg:gap-10">
@@ -75,12 +84,8 @@ const WhoIsTyson: React.FC<WhoIsTysonProps> = ({
               </ul>
               <div className="space-y-1">
                 <p>Available hours:</p>
-                <p className="text-xs sm:text-17">
-                  Tue 9 am - 4 pm (Lunch break 12 pm - 1 pm)
-                </p>
-                <p className="text-xs sm:text-17">
-                  Thu 9 am - 4 pm (Lunch break 12 pm - 1 pm)
-                </p>
+                <p className="text-xs sm:text-17">Tue & Thu: 9 am - 4 pm</p>
+                <p className="text-xs sm:text-17">(Lunch break 12 pm - 1 pm)</p>
               </div>
             </div>
             <form action="#">
@@ -91,7 +96,7 @@ const WhoIsTyson: React.FC<WhoIsTysonProps> = ({
             </form>
             <Button
               blue
-              className="h-sixty sm:h-16 w-full mt-auto mb-20 lg:mb-0"
+              className="h-sixty sm:h-16 w-full mt-auto mb-10 lg:mb-0"
               onClick={() => {
                 onToggleTyson();
                 onToggleCallWith();

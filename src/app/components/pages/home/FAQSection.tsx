@@ -5,7 +5,7 @@ import Button from '../../shared/Button';
 const FAQSection = () => {
   return (
     <section>
-      <div className="bg-faq bg-no-repeat bg-cover bg-center pt-8 pb-20 lg:pt-20">
+      <div className="bg-faq bg-no-repeat bg-center bg-cover pt-8 pb-20 lg:pt-20">
         <div className="max-w-base mx-auto relative flex flex-col md:flex-row gap-8 lg:gap-16 overflow-hidden px-5">
           <div className="flex-1 space-y-5 lg:space-y-8 relative z-10">
             <h2 className="text-white">Frequently asked questions</h2>
@@ -16,8 +16,8 @@ const FAQSection = () => {
               <div className="space-y-2">
                 <h2 className="text-white">Have more questions?</h2>
                 <p className="lg:leading-5 pr-5 lg:pr-0">
-                  If you’re still seeking answers, don’t hesitate to reach out
-                  to us. Our team is here to assist you with any inquiries you
+                  If you’re still seeking answers, don’t hesitate to reach out
+                  to us. Our team is here to assist you with any inquiries you
                   might have.
                 </p>
               </div>
@@ -34,9 +34,9 @@ const FAQSection = () => {
               <div className="space-y-2">
                 <h2 className="text-white">About</h2>
                 <p className="lg:leading-5 pr-5 lg:pr-0">
-                  Dave’s Auto Center is the best equipped and most highly
+                  Dave’s Auto Center is the best equipped and most highly
                   trained <br className="hidden lg:block" />
-                  auto shop in Utah.
+                  auto shop in Utah.
                 </p>
               </div>
               <Link href="/">

@@ -22,11 +22,20 @@ const CallWith: React.FC<CallWithProps> = ({ onToggleCallWith }) => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
       className="sm:fixed inset-0 flex items-center justify-center z-[60] sm:bg-black/50 sm:px-5 sm:py-5 overflow-hidden"
+      onClick={onToggleCallWith}
     >
-      <div className="custom-scrollbar lg:max-w-4xl xl:max-w-5xl w-full max-h-full fixed sm:relative inset-0 z-[60] mx-auto  bg-white sm:rounded-10 lg:rounded-20 shadow-privacy overflow-auto pt-14 sm:pt-16 px-5 pb-5 lg:p-10 xl:p-50">
+      <div
+        className="lg:max-w-4xl xl:max-w-5xl w-full max-h-full fixed sm:relative inset-0 z-[60] mx-auto  bg-white sm:rounded-10 lg:rounded-20 shadow-privacy overflow-auto pt-14 sm:pt-16 px-5 pb-5 lg:p-10 xl:p-50"
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
+      >
         <button
           className="absolute top-5 right-5 lg:top-8 lg:right-8"
-          onClick={onToggleCallWith}
+          onClick={(e) => {
+            e.stopPropagation();
+            onToggleCallWith();
+          }}
         >
           <svg
             width="24"

@@ -12,18 +12,27 @@ const Cart: React.FC<{ onToggleCart: () => void }> = ({ onToggleCart }) => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
       className="fixed inset-0 z-[100] text-brand-dark bg-black/50"
+      onClick={onToggleCart}
     >
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.2 }}
-        className="max-w-96 lg:max-w-[40rem] w-full relative min-h-screen flex flex-col justify-between bg-white ml-auto px-4 pt-16 lg:px-10 pb-10"
+        className="h-full max-w-96 xl:max-w-md w-full relative min-h-screen flex flex-col justify-between bg-white ml-auto pt-10 pb-10"
       >
-        <div>
+        <div
+          className="overflow-auto"
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
+        >
           <button
-            onClick={onToggleCart}
-            className="absolute top-8 right-8 lg:top-10 lg:right-50 pb-10"
+            onClick={(e) => {
+              e.stopPropagation();
+              onToggleCart();
+            }}
+            className="absolute top-5 right-5"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -40,18 +49,19 @@ const Cart: React.FC<{ onToggleCart: () => void }> = ({ onToggleCart }) => {
               />
             </svg>
           </button>
-          <h2 className="text-2xl lg:text-4xl font-bold text-center">
+          <h2 className="sticky top-0 text-2xl font-bold text-center bg-white pb-3">
             Your cart
           </h2>
-          <div>
-            <CartProduct />
-            <CartProduct />
+          <div className="h-fit divide-y divide-brand-gray/50 overflow-auto px-4 lg:px-6">
+            {Array.from({ length: 8 }).map((_, idx) => (
+              <CartProduct key={idx} />
+            ))}
           </div>
         </div>
 
-        <div className=" flex flex-col justify-between pt-8 lg:pt-12 border-t border-brand-gray">
-          <div className="space-y-8 lg:space-y-14">
-            <div className="space-y-5 lg:space-y-8 text-17">
+        <div className="sticky bottom-0 flex flex-col justify-between bg-white pt-5 border-t border-brand-gray px-4 lg:px-7">
+          <div className="space-y-8">
+            <div className="space-y-2 text-sm">
               <div className="flex items-center justify-between">
                 <p className="font-semibold uppercase">Shipping</p>
                 <p>Calculate at Checkout</p>
@@ -62,15 +72,12 @@ const Cart: React.FC<{ onToggleCart: () => void }> = ({ onToggleCart }) => {
               </div>
             </div>
             <div className="text-center">
-              <Button
-                red
-                className="w-full h-sixty lg:h-[4.625rem] mb-6 lg:mb-8"
-              >
+              <Button red className="w-full h-12 lg:h-50 text-sm mb-3">
                 check out
               </Button>
               <Link
                 href="/merchendize"
-                className="text-sm lg:text-17 hover:underline transition-all duration-200"
+                className="text-sm hover:underline transition-all duration-200"
               >
                 Continue shopping
               </Link>

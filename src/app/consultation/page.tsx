@@ -16,18 +16,37 @@ const Page = () => {
 
   const handleToggleTysonOpen = () => {
     setIsTysonOpen((open) => !open);
+    document.body.classList.toggle('overflow-hidden');
   };
   const handleToggleDaveOpen = () => {
     setIsDaveOpen((open) => !open);
-    console.log('click');
+    document.body.classList.toggle('overflow-hidden');
   };
   const handleToggleCallWithOpen = () => {
     setIsCallWithOpen((open) => !open);
+    document.body.classList.toggle('overflow-hidden');
   };
 
   return (
     <>
       <section className="pb-32 lg:pb-56">
+        <AnimatePresence>
+          {isTysonOpen && (
+            <WhoIsTyson
+              onToggleTyson={handleToggleTysonOpen}
+              onToggleCallWith={handleToggleCallWithOpen}
+            />
+          )}
+          {isDaveOpen && (
+            <WhoIsDave
+              onToggleDave={handleToggleDaveOpen}
+              onToggleCallWith={handleToggleCallWithOpen}
+            />
+          )}
+          {isCallWithOpen && (
+            <CallWith onToggleCallWith={handleToggleCallWithOpen} />
+          )}
+        </AnimatePresence>
         <div className="max-w-base mx-auto px-5">
           <div className="space-y-5">
             <h1 className="text-[1.9375rem] sm:text-5xl md:text-6xl lg:text-70 font-bold  leading-[117%] sm:leading-none lg:leading-[117%]">
@@ -436,23 +455,6 @@ const Page = () => {
             </div>
           </div>
         </div>
-        <AnimatePresence>
-          {isTysonOpen && (
-            <WhoIsTyson
-              onToggleTyson={handleToggleTysonOpen}
-              onToggleCallWith={handleToggleCallWithOpen}
-            />
-          )}
-          {isDaveOpen && (
-            <WhoIsDave
-              onToggleDave={handleToggleDaveOpen}
-              onToggleCallWith={handleToggleCallWithOpen}
-            />
-          )}
-          {isCallWithOpen && (
-            <CallWith onToggleCallWith={handleToggleCallWithOpen} />
-          )}
-        </AnimatePresence>
       </section>
     </>
   );

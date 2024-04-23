@@ -1,3 +1,5 @@
+'use client';
+
 interface SocialsProps {
   gap?: string;
   bgTiktok?: string;
@@ -5,7 +7,7 @@ interface SocialsProps {
 
 const Socials: React.FC<SocialsProps> = ({
   gap = 'gap-5',
-  bgTiktok = 'bg-white',
+  bgTiktok = 'bg-brand-dark',
 }) => {
   return (
     <div className="flex items-center">
@@ -14,7 +16,7 @@ const Socials: React.FC<SocialsProps> = ({
         {/* Instagram */}
         <a
           href="#"
-          className="w-10 h-10 shrink-0 grid place-content-center bg-gradient-to-t from-[#EEA054] via-[#D64763] to-[#B62A99] rounded-full animate-pulse"
+          className="shine-animation w-10 h-10 shrink-0 relative grid place-content-center bg-gradient-to-t from-[#EEA054] via-[#D64763] to-[#B62A99] rounded-full overflow-hidden"
         >
           <svg
             width="17"
@@ -32,7 +34,7 @@ const Socials: React.FC<SocialsProps> = ({
         {/* Facebook */}
         <a
           href="#"
-          className="w-10 h-10 shrink-0 grid place-content-center bg-brand-blue-2 rounded-full animate-pulse"
+          className="shine-animation w-10 h-10 shrink-0 relative grid place-content-center bg-brand-blue-2 rounded-full overflow-hidden"
         >
           <svg
             width="17"
@@ -50,7 +52,7 @@ const Socials: React.FC<SocialsProps> = ({
         {/* Youtube */}
         <a
           href="#"
-          className="w-10 h-10 shrink-0 grid place-content-center bg-brand-red rounded-full animate-pulse"
+          className="shine-animation w-10 h-10 shrink-0 relative grid place-content-center bg-brand-red rounded-full overflow-hidden"
         >
           <svg
             width="18"
@@ -68,7 +70,7 @@ const Socials: React.FC<SocialsProps> = ({
         {/* TikTok */}
         <a
           href="#"
-          className={`w-10 h-10 shrink-0 grid place-content-center ${bgTiktok} rounded-full animate-pulse`}
+          className={`shine-animation w-10 h-10 shrink-0 relative grid place-content-center ${bgTiktok} rounded-full overflow-hidden`}
         >
           <svg
             width="16"

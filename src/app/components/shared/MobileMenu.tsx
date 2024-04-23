@@ -13,15 +13,15 @@ const MobileMenu = () => {
         isOpen ? 'translate-x-0' : '-translate-x-full'
       }`}
     >
-      <div className="w-full relative top-0 space-y-20 pt-5 pb-20">
+      <div className="w-full relative top-0 space-y-10 pt-5 pb-20">
         <div className="sticky top-0 z-10 w-full bg-brand-blue-1 py-2">
           <Link href="/">
             <Image
               src="/assets/images/img-logo-mobile-menu.svg"
               alt="Logo"
-              width={306}
-              height={63}
-              className="w-auto h-auto mx-auto"
+              width={250}
+              height={52}
+              className="w-[15.625rem] h-[3.25rem] mx-auto"
             />
           </Link>
           <button
@@ -36,11 +36,11 @@ const MobileMenu = () => {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M5.15625 21.0938L24.8438 8.90625M5.15625 8.90625L24.8438 21.0938"
+                d="M5 24L25 4M5 4L25 24"
                 stroke="#FFFC00"
-                strokeWidth="2"
-                strokeMiterlimit="10"
-                strokeLinecap="round"
+                stroke-width="2"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
               />
             </svg>
           </button>

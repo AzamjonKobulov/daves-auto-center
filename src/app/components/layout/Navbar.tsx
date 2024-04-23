@@ -9,9 +9,8 @@ import Image from 'next/image';
 import Socials from '../shared/Socials';
 import MobileMenu from '../shared/MobileMenu';
 import { useMobileMenu } from '@/app/contexts/MobileMenuContext';
-import MessengerButton from '../shared/MessengerButton';
+import ChatButton from '../shared/ChatButton';
 import Menu from '../shared/Menu';
-import MessagePoppup from '../shared/MessagePoppup';
 import { usePathname } from 'next/navigation';
 import { useAccount } from '@/app/contexts/AccountContext';
 import Cart from '../shared/Cart';
@@ -37,12 +36,12 @@ const Navbar = () => {
 
   return (
     <header className="sticky top-0 z-50 lg:h-100 bg-brand-blue text-white">
-      <AnimatePresence>{isMenuOpen && <Menu />}</AnimatePresence>
-      <MobileMenu />
-      <MessengerButton />
       <AnimatePresence>
+        {isMenuOpen && <Menu onToggleMenu={handleToggleMenu} />}
         {isCartOpen && <Cart onToggleCart={handleToggleCart} />}
       </AnimatePresence>
+      <MobileMenu />
+      <ChatButton />
       <nav className="max-w-base mx-auto flex items-center justify-between py-2 lg:py-4 px-5">
         {/* Logo & Socials */}
         <div className="flex items-center">
@@ -73,18 +72,23 @@ const Navbar = () => {
           <button className="hidden lg:block" onClick={handleToggleMenu}>
             {isMenuOpen ? (
               <svg
-                width="29"
-                height="18"
-                viewBox="0 0 29 18"
+                width="40"
+                height="40"
+                viewBox="0 0 40 40"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M1.66675 1L28 17M1.66675 17L28 1"
+                  d="M10 30L30 10"
                   stroke="white"
-                  strokeWidth="2"
-                  strokeMiterlimit="10"
-                  strokeLinecap="round"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M10 10L30 30"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
                 />
               </svg>
             ) : (

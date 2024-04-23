@@ -2,23 +2,27 @@ import Link from 'next/link';
 
 import { motion } from 'framer-motion';
 
-const Menu = () => {
+const Menu: React.FC<{
+  onToggleMenu: () => void;
+}> = ({ onToggleMenu }) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
-      className="fixed inset-x-0 bottom-0 top-100 z-[90] min-h-screen w-screen hidden lg:block bg-white pt-1"
+      className="custom-scroll fixed inset-x-0 bottom-0 top-100 z-[90] hidden overflow-auto lg:block items-stretch bg-black/50 white pt-px px-5 pb-5"
+      onClick={onToggleMenu}
     >
-      <div className="h-full bg-brand-blue">
-        <div className="max-w-base mx-auto flex flex-wrap justify-between gap-10 text-white p-10 xl:px-[4.6875rem] xl:pt-16">
-          <div className="space-y-8">
-            <div className="space-y-5">
-              <p className="text-lg smg:text-xl lg:text-3xl font-bold">
-                Engine Services
-              </p>
-              <ul className="space-y-3.5 text-sm lg:text-base text-white/50">
+      <div
+        className="max-w-min xl:max-w-base mx-auto bg-brand-blue rounded-10"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="flex xl:justify-start gap-20 xl:gap-24 items-stretch text-white whitespace-nowrap p-10">
+          <div className="flex flex-col space-y-12">
+            <div className="space-y-3.5">
+              <p className="text-lg sm:text-xl font-bold">Engine Services</p>
+              <ul className="space-y-2.5 text-sm xl:text-base text-white/50">
                 <li>
                   <Link
                     href="#"
@@ -85,11 +89,9 @@ const Menu = () => {
                 </li>
               </ul>
             </div>
-            <div className="space-y-5">
-              <p className="text-lg smg:text-xl lg:text-3xl font-bold">
-                Contact
-              </p>
-              <ul className="space-y-3.5 text-sm lg:text-base text-white/50">
+            <div className="space-y-3.5">
+              <p className="text-lg sm:text-xl font-bold">Contact</p>
+              <ul className="space-y-2.5 text-sm xl:text-base text-white/50">
                 <li>
                   <Link
                     href="#"
@@ -109,12 +111,10 @@ const Menu = () => {
               </ul>
             </div>
           </div>
-          <div>
-            <div className="space-y-5">
-              <p className="text-lg smg:text-xl lg:text-3xl font-bold">
-                Diesel Services
-              </p>
-              <ul className="space-y-3.5 text-sm lg:text-base text-white/50">
+          <div className="flex flex-col space-y-20 xl:justify-between">
+            <div className="flex flex-col justify-between space-y-3.5">
+              <p className="text-lg sm:text-xl font-bold">Diesel Services</p>
+              <ul className="space-y-2.5 text-sm xl:text-base text-white/50">
                 <li>
                   <Link
                     href="#"
@@ -173,9 +173,9 @@ const Menu = () => {
                 </li>
               </ul>
             </div>
-            <div className="space-y-5 mt-[5.375rem] xs:mt-16 lg:mt-[4.375rem]">
-              <p className="text-lg sm:text-xl lg:text-3xl font-bold">About</p>
-              <ul className="space-y-3.5 text-sm lg:text-base text-white/50">
+            <div className="space-y-3.5">
+              <p className="text-lg s:text-xl font-bold">About</p>
+              <ul className="space-y-2.5 text-sm xl:text-base text-white/50">
                 <li>
                   <Link
                     href="#"
@@ -219,11 +219,117 @@ const Menu = () => {
               </ul>
             </div>
           </div>
-          <div className="space-y-5 xl:-mr-20">
-            <p className="text-lg smg:text-xl lg:text-3xl font-bold">
-              Services
-            </p>
-            <ul className="space-y-3.5 text-sm lg:text-base text-white/50">
+          <div className="flex flex-col space-y-20 xl:justify-between">
+            <div className="flex flex-col justify-between space-y-3.5">
+              <p className="text-lg sm:text-xl font-bold">Service areas</p>
+              <ul className="space-y-2.5 text-sm xl:text-base text-white/50">
+                <li>
+                  <Link
+                    href="#"
+                    className="hover:text-white transition-all duration-200"
+                  >
+                    Bountiful Auto Repair
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="hover:text-white transition-all duration-200"
+                  >
+                    Auto Repair Centerville
+                  </Link>
+                </li>{' '}
+                <li>
+                  <Link
+                    href="#"
+                    className="hover:text-white transition-all duration-200"
+                  >
+                    North Salt Lake Auto Repair
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="hover:text-white transition-all duration-200"
+                  >
+                    Kaysville Auto Repair
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="hover:text-white transition-all duration-200"
+                  >
+                    Auto Repair Farmington
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="hover:text-white transition-all duration-200"
+                  >
+                    Fruit Heights Auto Repair
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="hover:text-white transition-all duration-200"
+                  >
+                    Woods Cross Auto Repair
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div className="block space-y-3.5">
+              <p className="text-lg sm:text-xl font-bold">Foreign Car repair</p>
+              <ul className="space-y-2.5 text-sm xl:text-base text-white/50">
+                <li>
+                  <Link
+                    href="#"
+                    className="hover:text-white transition-all duration-200"
+                  >
+                    BMW service & repair
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="hover:text-white transition-all duration-200"
+                  >
+                    Toyota Repair
+                  </Link>
+                </li>{' '}
+                <li>
+                  <Link
+                    href="#"
+                    className="hover:text-white transition-all duration-200"
+                  >
+                    Volvo Repair
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="hover:text-white transition-all duration-200"
+                  >
+                    Land Rover Repair
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="hover:text-white transition-all duration-200"
+                  >
+                    European Auto Repair
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="shrink-0 space-y-3.5">
+            <p className="text-lg sm:text-xl font-bold">Services</p>
+            <ul className="space-y-2.5 text-sm xl:text-base text-white/50">
               <li>
                 <Link
                   href="#"
@@ -344,35 +450,6 @@ const Menu = () => {
                   className="hover:text-white transition-all duration-200"
                 >
                   Service Areas
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className="block space-y-5">
-            <p className="text-lg smg:text-xl lg:text-3xl font-bold">Blog</p>
-            <ul className="space-y-3.5 text-sm lg:text-base text-white/50">
-              <li>
-                <Link
-                  href="#"
-                  className="hover:text-white transition-all duration-200"
-                >
-                  Lorem
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="hover:text-white transition-all duration-200"
-                >
-                  Ipsum
-                </Link>
-              </li>{' '}
-              <li>
-                <Link
-                  href="#"
-                  className="hover:text-white transition-all duration-200"
-                >
-                  Dolor sit amet
                 </Link>
               </li>
             </ul>

@@ -126,19 +126,25 @@ const ReviewsSection = () => {
         <h2 className="max-w-base mx-auto px-5">What our clients say</h2>
         <div className="max-w-base mx-auto lg:px-5">
           <Swiper
-            spaceBetween={16}
+            // spaceBetween={16}
             centeredSlides={true}
             loop={true}
             autoplay={{
-              delay: 2500,
+              delay: 300,
               disableOnInteraction: false,
+              pauseOnMouseEnter: true,
             }}
+            speed={4000}
             pagination={{
               clickable: true,
             }}
             modules={[Autoplay]}
             breakpoints={{
               0: {
+                spaceBetween: 16,
+                slidesPerView: 1.2,
+              },
+              480: {
                 slidesPerView: 1.5,
                 spaceBetween: 16,
               },
@@ -151,7 +157,7 @@ const ReviewsSection = () => {
                 spaceBetween: 20,
               },
             }}
-            className="mySwiper"
+            className="mySwiper swiper-reviews !px-5"
           >
             {reviews.map((review, idx) => (
               <SwiperSlide key={idx} className="xs:px-0.5 lg:px-0">

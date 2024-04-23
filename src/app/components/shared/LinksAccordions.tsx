@@ -178,18 +178,59 @@ const accordionData = [
     ],
   },
   {
-    theme: 'Blog',
+    theme: 'Service areas',
     links: [
       {
-        name: 'Blog',
+        name: 'Bountiful Auto Repair',
         path: '/',
       },
       {
-        name: 'Blog1',
+        name: 'Auto Repair Centerville',
         path: '/',
       },
       {
-        name: 'Blog2',
+        name: 'North Salt Lake Auto Repair',
+        path: '/',
+      },
+      {
+        name: 'Kaysville Auto Repair',
+        path: '/',
+      },
+      {
+        name: 'Auto Repair Farmington',
+        path: '/',
+      },
+      {
+        name: 'Fruit Heights Auto Repair',
+        path: '/',
+      },
+      {
+        name: 'Woods Cross Auto Repair',
+        path: '/',
+      },
+    ],
+  },
+  {
+    theme: 'Foreign Car repair',
+    links: [
+      {
+        name: 'BMW service & repair',
+        path: '/',
+      },
+      {
+        name: 'Toyota Repair',
+        path: '/',
+      },
+      {
+        name: 'Volvo Repair',
+        path: '/',
+      },
+      {
+        name: 'Land Rover Repair',
+        path: '/',
+      },
+      {
+        name: 'European Auto Repair',
         path: '/',
       },
     ],

@@ -108,15 +108,19 @@ input[type='checkbox']:checked + div svg {
   @apply text-black/50;
 }
 
-.custom-scrollbar::-webkit-scrollbar {
+::-webkit-scrollbar {
   @apply w-2; /* Width of the scrollbar */
 }
 
-.custom-scrollbar::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
   @apply bg-brand-gray/30;
 }
 
-.custom-scrollbar::-webkit-scrollbar-thumb {
+.custom-scroll::-webkit-scrollbar-thumb {
+  @apply bg-brand-blue rounded-full hover:bg-brand-gray;
+}
+
+::-webkit-scrollbar-thumb {
   @apply bg-brand-gray/60 rounded-full hover:bg-brand-gray;
 }
 
@@ -140,26 +144,6 @@ input[type='checkbox']:checked + div svg {
   }
 }
 
-/* Styling the scrollbar */
-::-webkit-scrollbar {
-  width: 4px;
-}
-
-::-webkit-scrollbar-track {
-  background-color: #f1f1f1; /* color of the track */
-}
-
-/* Styling the handle or thumb */
-::-webkit-scrollbar-thumb {
-  background-color: #888; /* color of the thumb */
-  border-radius: 6px; /* roundness of the thumb */
-}
-
-/* Styling the corners of the scrollbar */
-::-webkit-scrollbar-corner {
-  background-color: #f1f1f1; /* color of the corner */
-}
-
 .slider-section-blog .swiper {
   @apply !overflow-visible;
 }
@@ -178,6 +162,10 @@ input[type='checkbox']:checked + div svg {
 
 .swiper-pagination-bullet-active {
   @apply lg:!w-4 lg:!h-4 !bg-brand-blue-1;
+}
+
+.swiper-slide:hover {
+  pointer-events: none !important;
 }
 
 .range-slider {
@@ -293,4 +281,28 @@ input[type='checkbox']:checked + div svg {
     opacity: 0;
     transform: scale(2);
   }
+}
+
+@keyframes shine {
+  0% {
+    transform: translateY(-150%) rotate(45deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(150%) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(450%) rotate(45deg);
+    opacity: 0.8;
+  }
+}
+
+.shine-animation::after {
+  content: '';
+  position: absolute;
+  width: 150%;
+  height: 400%;
+  background: white;
+  animation: shine 3s infinite;
 }

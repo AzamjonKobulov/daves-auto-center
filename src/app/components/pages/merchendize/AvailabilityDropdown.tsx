@@ -36,7 +36,7 @@ const AvailabilityDropdown = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="absolute w-full grid place-content-center bg-white rounded-10 shadow-review mt-3.5 py-3 px-8"
+            className="absolute z-10 w-full grid place-content-center bg-white rounded-10 shadow-review mt-3.5 py-3 px-8"
           >
             <div className="space-y-3.5">
               <label

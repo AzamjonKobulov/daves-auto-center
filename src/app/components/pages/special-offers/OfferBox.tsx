@@ -17,23 +17,29 @@ const OfferBox: React.FC<OfferBoxProps> = ({ offer, index }) => {
   return (
     <div className="flex flex-col justify-between space-y-2 text-brand-dark">
       <div>
-        <div className="h-80 xl:h-60 overflow-hidden">
+        <div className="h-56">
           <Image
             src={offer.img}
             alt="Special Offer"
             width={1000}
             height={500}
-            className={index !== 0 ? 'w-4/5' : ''}
+            className="w-full h-full object-cover"
           />
         </div>
-        <div className="space-y-2 mt-2.5">
-          <p className="text-17 leading-7">{offer.text}</p>
-          <h5 className="text-xl font-bold">{offer.cost}</h5>
-        </div>
       </div>
-      <Button redOutline className="h-sixty">
-        make an appointment
-      </Button>
+      <div className="space-y-2.5">
+        <div className="space-y-2 mt-2.5">
+          <p className={`text-17 leading-7 ${index === 2 ? 'max-w-64' : ''}`}>
+            {offer.text}
+          </p>
+          <h5 className="text-xl font-semibold text-center sm:text-start">
+            {offer.cost}
+          </h5>
+        </div>
+        <Button redOutline className="w-full sm:w-auto h-sixty">
+          make an appointment
+        </Button>
+      </div>
     </div>
   );
 };

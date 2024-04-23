@@ -12,7 +12,7 @@ const Pagination = () => {
       <button className="w-8 h-8 shrink-0 grid place-content-center hover:bg-brand-blue-1 hover:text-white text-15 rounded-full transition-all duration-200">
         3
       </button>
-      <button className="w-8 h-8 shrink-0 grid place-content-center hover:bg-brand-blue-1 hover:text-white text-15 rounded-full transition-all duration-200">
+      <button className="w-8 h-8 shrink-0 grid place-content-center text-15 rounded-full transition-all duration-200">
         ...
       </button>
       <button className="w-8 h-8 shrink-0 grid place-content-center hover:bg-brand-blue-1 hover:text-white text-15 rounded-full transition-all duration-200">

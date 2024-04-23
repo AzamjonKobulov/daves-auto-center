@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import Button from './Button';
+import Button from '../../shared/Button';
 import { useState } from 'react';
 
 interface ExistingCustmersPoppupProps {
@@ -17,9 +17,13 @@ const ExistingCustmersPoppup: React.FC<ExistingCustmersPoppupProps> = ({
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 px-5"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 p-5"
     >
-      <div className="max-w-5xl w-full h-4/5 lg:h-[95%] relative flex items-center justify-center bg-white text-brand-dark rounded-10 lg:rounded-20 shadow-privacy py-10 sm:py-16 lg:pt-28 lg:pb-40 px-7">
+      <div
+        className={`max-w-[57.5rem] w-full ${
+          isSuccess ? 'h-[90%]' : 'h-max'
+        } xl:w-[57.5rem] xl:h-[39.375rem] relative flex items-center justify-center bg-white text-brand-dark rounded-10 lg:rounded-20 shadow-privacy overflow-auto py-10 sm:py-16 pb-20 px-8 lg:px-20`}
+      >
         <button
           onClick={onToggleMessage}
           className="absolute top-5 right-5 lg:top-8 lg:right-8"
@@ -62,7 +66,7 @@ const ExistingCustmersPoppup: React.FC<ExistingCustmersPoppupProps> = ({
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="max-w-2xl w-full space-y-10 lg:space-y-16 text-center"
+              className="max-w-2xl w-full space-y-8 text-center"
             >
               <div className="space-y-3">
                 <h2 className="text-2xl sm:text-4xl lg:text-[3.125rem] lg:leading-[3.625rem] font-bold">

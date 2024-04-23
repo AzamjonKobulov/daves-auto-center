@@ -49,8 +49,12 @@
   }
 }
 
+input[type='checkbox']:checked + div {
+  @apply bg-brand-blue-1;
+}
+
 input[type='checkbox']:checked + div svg {
-  @apply block;
+  @apply block fill-white;
 }
 
 /* Calendar styles */

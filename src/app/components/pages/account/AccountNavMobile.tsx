@@ -258,7 +258,7 @@ const AccountNavMobile = () => {
             xmlns="http://www.w3.org/2000/svg"
             className="fill-brand-blue-1 group-hover:fill-brand-red-1 transition-all duration-200"
           >
-            <g clip-path="url(#clip0_739_27783)">
+            <g clipPath="url(#clip0_739_27783)">
               <path
                 fillRule="evenodd"
                 clipRule="evenodd"

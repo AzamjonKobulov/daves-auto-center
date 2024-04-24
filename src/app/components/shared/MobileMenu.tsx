@@ -38,9 +38,9 @@ const MobileMenu = () => {
               <path
                 d="M5 24L25 4M5 4L25 24"
                 stroke="#FFFC00"
-                stroke-width="2"
-                stroke-miterlimit="10"
-                stroke-linecap="round"
+                strokeWidth="2"
+                strokeMiterlimit="10"
+                strokeLinecap="round"
               />
             </svg>
           </button>

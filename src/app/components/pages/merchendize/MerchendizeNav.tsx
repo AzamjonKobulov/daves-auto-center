@@ -64,7 +64,7 @@ const MerchendizeNav = () => {
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.2 }}
                     className={`absolute ${
-                      idx === 2 ? 'right-0' : 'left-0'
+                      idx === 2 ? 'right-0 xs:left-0' : 'left-0'
                     } top-0 mt-10 lg:mt-16 z-20`}
                   >
                     {link.dropdown}

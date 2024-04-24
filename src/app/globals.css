@@ -116,6 +116,10 @@ input[type='checkbox']:checked + div svg {
   @apply w-2; /* Width of the scrollbar */
 }
 
+.sm-scroll::-webkit-scrollbar {
+  @apply w-0 h-1; /* Width of the scrollbar */
+}
+
 ::-webkit-scrollbar-track {
   @apply bg-brand-gray/30;
 }

@@ -67,7 +67,7 @@ const FavoriteTShirt = () => {
       </div>
       <Button
         red
-        className="hidden lg:group-hover:block h-50 xl:h-sixty w-[90%] absolute left-1/2 top-1/3 -translate-y-1/2 -translate-x-1/2 !text-sm !px-5 xl:!text-17 xl:!px-8"
+        className="hidden lg:group-hover:block h-11 w-3/4 absolute left-1/2 bottom-1/4 -translate-x-1/2 !text-sm !px-5 xl:!text-17 xl:!px-8"
       >
         add to cart
       </Button>

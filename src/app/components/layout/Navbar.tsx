@@ -50,7 +50,7 @@ const Navbar = () => {
             <Image
               src="/assets/images/logo.svg"
               alt="Logo"
-              className="w-[10.375rem] h-8 sm:w-56 sm:h-12 lg:w-80 lg:h-16 xl:w-auto xl:h-auto"
+              className="w-[10.375rem] h-8 sm:w-56 sm:h-12 lg:w-80 lg:h-16 xl:w-[24.25rem]"
               width={388}
               height={63}
             />

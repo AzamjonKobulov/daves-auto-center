@@ -9,9 +9,9 @@ const Footer = () => {
         <div className="max-w-base mx-auto flex flex-col lg:flex-row gap-5 items-center justify-between text-sm xs:text-15 py-5 sm:py-8 lg:pb-8 lg:pt-10 lg:px-5">
           <Link href="/" className="hidden lg:block">
             <Image
-              src="/assets/images/logo.svg"
+              src="/assets/images/logo-footer.svg"
               alt="Logo"
-              className="w-56 h-16 sm:w-60 sm:h-20 lg:w-80 lg:h-16 xl:h-50 shrink-0"
+              className="w-56 h-16 sm:w-auto sm:h-auto shrink-0"
               width={388}
               height={63}
             />

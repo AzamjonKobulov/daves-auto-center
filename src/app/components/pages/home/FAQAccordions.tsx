@@ -32,7 +32,7 @@ const accordionData = [
 ];
 
 const FAQAccordions = () => {
-  const [isOpen, setIsOpen] = useState<number>(-1);
+  const [isOpen, setIsOpen] = useState<number>(0);
 
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent) => {

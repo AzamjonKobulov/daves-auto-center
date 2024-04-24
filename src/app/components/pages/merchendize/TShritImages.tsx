@@ -19,7 +19,7 @@ const TShritImages: React.FC<{ images: string[] }> = ({ images }) => {
         {images.map((image, idx) => (
           <button
             key={idx}
-            className={`w-70 h-70 lg:w-20 lg:h-20 bg-white border ${
+            className={`w-70 h-70 sm:w-20 sm:h-20 bg-white border ${
               image === activeImage ? 'border-brand-dark' : 'border-transparent'
             } rounded p-2`}
             onClick={() => setActiveImage(image)}

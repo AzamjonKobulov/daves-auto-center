@@ -6,13 +6,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import MenWomenDropdown from './MenWomenDropdown';
 import BooksDropdown from './BooksDropdown';
 
-interface NavLink {
+interface Tab {
   name: string;
   path: string;
   dropdown: React.ReactNode;
 }
 
-const links: NavLink[] = [
+const tabs: Tab[] = [
   {
     name: 'Dave’s Apparel',
     path: '/merchendize/apparel',
@@ -31,33 +31,33 @@ const links: NavLink[] = [
 ];
 
 const MerchendizeNav = () => {
-  const [hoveredLink, setHoveredLink] = useState<number | null>(null); // Changed the type to number
+  const [hoveredTab, setHoveredTab] = useState<number | null>(null); // Changed the type to number
 
   const handleMouseEnter = (index: number) => {
     // Accepts index instead of path
-    setHoveredLink(index);
+    setHoveredTab(index);
   };
 
   const handleMouseLeave = () => {
-    setHoveredLink(null);
+    setHoveredTab(null);
   };
 
   return (
     <div className="h-9 lg:h-50 bg-brand-blue/10">
       <div className="h-full max-w-base mx-auto px-5">
         <div className="h-full min-w-max flex items-center">
-          {links.map((link, idx) => (
+          {tabs.map((link, idx) => (
             <div
               key={link.name}
               onMouseEnter={() => handleMouseEnter(idx)} // Passes the index
               onMouseLeave={handleMouseLeave}
-              className={`h-full relative grid place-content-center text-xs lg:text-base px-5 lg:px-8 ${
-                hoveredLink === idx ? 'bg-brand-blue/20' : ''
+              className={`h-full relative grid place-content-center text-xs lg:text-base cursor-pointer px-5 lg:px-8 ${
+                hoveredTab === idx ? 'bg-brand-blue/20' : ''
               }`}
             >
-              <Link href={link.path}>{link.name}</Link>
+              {link.name}
               <AnimatePresence>
-                {hoveredLink === idx && (
+                {hoveredTab === idx && (
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
